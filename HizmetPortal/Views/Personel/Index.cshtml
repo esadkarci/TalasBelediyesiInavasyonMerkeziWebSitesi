@@ -1,0 +1,41 @@
+﻿@using EntityLayer_HizmetPortal.Concrate
+@model List<Personel> 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/UygulamaLayout.cshtml";
+}
+
+
+
+<div class="container-fluid team pb-5">
+    <div class="container pb-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+            <h4 class="text-primary">Our Team</h4>
+            <h1 class="display-4 mb-4">Meet Our Expert Team Members</h1>
+            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="row g-4">
+            @foreach (var personel in Model)
+            {
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="@personel.PersonelImage" class="img-fluid rounded-top w-100" alt="">
+                            <div class="team-icon">
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-title p-4">
+                            <center>
+                                <a href="/Personel/PersonelDetailsIndex/@personel.PersonelId" style="text-decoration: none;">
+                                    <h4 class="mb-0 text-center">@personel.PersonelIsim @personel.PersonelSoyisim</h4>
+                                </a>
+                            </center> 
+                            <center><p class="mb-0">@personel.PersonelUnvan</p></center>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

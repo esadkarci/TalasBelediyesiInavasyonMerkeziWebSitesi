@@ -1,0 +1,31 @@
+﻿@model EntityLayer_HizmetPortal.Concrate.Reservation
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>yeni servis ekleme sayfası</h1>
+<br />
+@using (Html.BeginForm("Create", "AdminReservation", FormMethod.Post))
+{
+    @Html.Label("User seçiniz")
+    <select class="form-control" name="UserId">
+        @foreach (var user in ViewBag.Users)
+        {
+            <option value="@user.UserId">@user.UserName</option>
+        }
+    </select>
+
+    <div class="form-group">
+        @Html.Label("Event Seçiniz")
+        <select class="form-control" name="EventId">
+            @foreach (var events in ViewBag.Events)
+        {
+        <option value="@events.EventId">@events.EventTitle</option>
+        }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ekle</button>
+}

@@ -1,0 +1,168 @@
+﻿@using EntityLayer_HizmetPortal.Concrate
+@model List<Project>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/UygulamaLayout.cshtml";
+}
+<br />
+<br />
+<br />
+@*<div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="project-div">
+                    <img src="~/Image/indir5.png" alt="Image 1">
+                    <p>Textdsaaaaaaaaaaaaaaaaaaaaaaaaddddddddddddddddddddddddsdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaddddddddddddddaaaaaaaaa 1</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-div">
+                    <img src="~/Image/indir6.png" alt="Image 2">
+                    <p>Text 2</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-div">
+                    <img src="~/Image/indir7.png" alt="Image 3">
+                    <p>Text 3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+
+        .project-div {
+            width: 100%;
+            padding-top: 100%; /* Kare yapısını korumak için padding-top kullanılır */
+            position: relative;
+            background-color: var(--bs-primary); /* Mavi renk */
+            border-radius: 15px; /* Kenarları yuvarlak yapmak için */
+            overflow: hidden; /* Yuvarlak kenarların dışına taşan görüntüleri gizler */
+        }
+
+            .project-div img {
+                width: 100%;
+                height: 75%;
+                object-fit: cover; /* Resmi div'e sığacak şekilde kes */
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: #ffffff; /* Resim arka planı beyaz */
+            }
+
+            .project-div p {
+                overflow-wrap: break-word;
+                word-break: break-word; /* Alternative: break-all */
+                color: #ffffff; /* Beyaz renk */
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                margin: 0;
+                padding: 10px; /* Daha küçük padding */
+                text-align: center;
+                width: 100%;
+                background-color: var(--bs-primary); /* Mavi renk */
+            }
+    </style>*@
+@*<div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="project-div">
+                    <img src="~/Image/indir5.png" alt="Image 1">
+                    <p>Textdsaaaaaaaaaaaaaaaaaaaaaaaaddddd TextdsaaaaaaaaaaaaaaaaaaaaaaaaddddddddddddddddddddddddsdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaddddddddddddddaaaaaaaaaTextdsaaaaaaaaaaaaaaaaaaaaaaaaddddddddddddddddddddddddsdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaddddddddddddddaaaaaaaaadddddddddddddddddddsdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaddddddddddddddaaaaaaaaa 1</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-div">
+                    <img src="~/Image/indir6.png" alt="Image 2">
+                    <p>Text 2</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-div">
+                    <img src="~/Image/gürz_5.png" alt="Image 3">
+                    <p>Text 3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .project-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 100%;
+            border-radius: 15px; /* Rounded corners */
+            overflow: hidden; /* Hide overflow */
+        }
+
+            .project-div img {
+                width: 100%;
+                object-fit: cover;
+                border-bottom: 5px solid #ffffff; /* White border between image and text */
+            }
+
+            .project-div p {
+                overflow-wrap: break-word;
+                word-break: break-word;
+                color: #ffffff; /* White text */
+                background-color: var(--bs-primary); /* Blue background */
+                text-align: center;
+                padding: 10px;
+                margin: 0;
+            }
+    </style>*@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="project-div">
+                <img src="~/Image/indir5.png" alt="Image 1">
+                <p>Textdsaaaaaaaaaaaaaaaaaaaaaaaaddddd TextdsaaaaaaaaaaaaaaaaaaaaaaaaddddddddddddddddddddddddsdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaddddddddddddddaaaaaaaaaTextdsaaaaaaaaaaaaaaaaaaaaaaaaddddddddddddddddddddddddsdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaddddddddddddddaaaaaaaaadddddddddddddddddddsdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaddddddddddddddaaaaaaaaa 1</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="project-div">
+                <img src="~/Image/indir6.png" alt="Image 2">
+                <p>Text 2</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="project-div">
+                <img src="~/Image/gürz_5.png" alt="Image 3">
+                <p>Text 3</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .project-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        border-radius: 15px; /* Rounded corners */
+        overflow: hidden; /* Hide overflow */
+    }
+
+        .project-div img {
+            width: 100%;
+            object-fit: cover;
+            margin-bottom: -5px; /* Pull the bottom of the image closer to the text */
+        }
+
+        .project-div p {
+            overflow-wrap: break-word;
+            word-break: break-word;
+            color: #ffffff; /* White text */
+            background-color: var(--bs-primary); /* Blue background */
+            text-align: center;
+            padding: 10px;
+            margin: 0;
+        }
+</style>
+

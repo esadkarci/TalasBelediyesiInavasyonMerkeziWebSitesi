@@ -1,0 +1,33 @@
+﻿@model EntityLayer_HizmetPortal.Concrate.Personel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Güncelleme sayfası</h1>
+<br />
+@using (Html.BeginForm("Edit", "AdminPersonel", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("PersonelId")
+        @Html.TextBoxFor(x => x.PersonelId, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("PersonelIsim")
+        @Html.TextBoxFor(x => x.PersonelIsim, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("PersonelSoyisim")
+        @Html.TextBoxFor(x => x.PersonelSoyisim, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("PersonelUnvan")
+        @Html.TextBoxFor(x => x.PersonelUnvan, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("PersonelImage")
+        @Html.TextBoxFor(x => x.PersonelImage, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-success">Güncelle</button>
+}

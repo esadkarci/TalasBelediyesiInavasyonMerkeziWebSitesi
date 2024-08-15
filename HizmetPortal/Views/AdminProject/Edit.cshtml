@@ -1,0 +1,44 @@
+﻿@model EntityLayer_HizmetPortal.Concrate.Project
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>güncelleme sayfası</h1>
+<br />
+@using (Html.BeginForm("Edit", "AdminProject", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Project Id")
+        @Html.TextBoxFor(x => x.ProjectId, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Project Name")
+        @Html.TextBoxFor(x => x.ProjectName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Project Title")
+        @Html.TextBoxFor(x => x.ProjectTitle, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Project Destcription")
+        @Html.TextBoxFor(x => x.ProjectDestcription, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Project Image")
+        @Html.TextBoxFor(x => x.ProjectImage, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Project Statues")
+        @Html.TextBoxFor(x => x.ProjectStatues, new { @class = "form-control" })
+    </div>
+    @Html.Label("Aşama seçiniz")
+    <select class="form-control" name="StageId">
+        @foreach (var stage in ViewBag.Stages)
+        {
+            <option value="@stage.StageId">@stage.StageName</option>
+        }
+    </select>
+    <button type="submit" class="btn btn-success">Güncelle</button>
+}

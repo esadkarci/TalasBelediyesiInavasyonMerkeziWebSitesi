@@ -1,0 +1,30 @@
+﻿@using EntityLayer_HizmetPortal.Concrate
+@model List<Haberler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<table class="table table-bordered">
+    <tr>
+        <th>HaberId</th>
+        <th>HaberTitle</th>
+        <th>HaberDescription</th>
+        <th>HaberlerImage</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.HaberId</td>
+            <td>@item.HaberTitle</td>
+            <td>@item.HaberDescription</td>
+            <td>@item.HaberImage</td>            
+            <td><a href="/AdminHaberler/Edit/@item.HaberId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/AdminHaberler/Delete/@item.HaberId" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/AdminHaberler/Create" class="btn btn-info">yeni haber</a>
+

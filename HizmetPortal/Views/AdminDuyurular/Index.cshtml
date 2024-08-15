@@ -1,0 +1,31 @@
+﻿@using EntityLayer_HizmetPortal.Concrate 
+@model List<Duyurular>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>DuyurularId</th>
+        <th>DuyurularImage</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.DuyurularId</td>
+            <td>@item.DuyurularImage</td>
+            <td><a href="/AdminDuyurular/Edit/@item.DuyurularId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/AdminDuyurular/Delete/@item.DuyurularId" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/AdminDuyurular/Create" class="btn btn-info">yeni kategori</a>
+
+
+
+

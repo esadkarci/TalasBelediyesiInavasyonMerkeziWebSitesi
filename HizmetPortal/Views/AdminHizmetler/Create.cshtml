@@ -1,0 +1,34 @@
+﻿@model EntityLayer_HizmetPortal.Concrate.Hizmetler
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>yeni servis ekleme sayfası</h1>
+<br />
+@using (Html.BeginForm("Create", "AdminHizmetler", FormMethod.Post,new {enctype="multipart/form-data"}))
+{
+    <div class="form-group">
+        @Html.Label("Hizmet Name")
+        @Html.TextBoxFor(x => x.HizmetName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.HizmetName)
+        <br />
+        @Html.Label("Hizmet Destcription")
+        @Html.TextAreaFor(x => x.HizmetDestcription, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.HizmetDestcription)
+        <br />
+        @Html.Label("Hizmet Image")
+        <input type="file" name="HizmetlerImage" />
+
+        <br />
+        @Html.Label("Hizmet Icon")
+        <input type="file" name="HizmetIconFile" />
+        <br />
+        @Html.Label("Hizmet Statues")
+        @Html.TextBoxFor(x => x.HizmetStatues, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.HizmetStatues)
+        <br />
+        <button type="submit" class="btn btn-primary">Ekle</button>
+    </div>
+}

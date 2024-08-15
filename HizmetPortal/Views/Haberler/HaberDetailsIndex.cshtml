@@ -1,0 +1,62 @@
+﻿@model EntityLayer_HizmetPortal.Concrate.Haberler
+
+@{
+    ViewBag.Title = "HaberDetailsIndex";
+    Layout = "~/Views/Shared/UygulamaLayout.cshtml";
+}
+
+
+
+<br />
+<br />
+
+
+
+
+
+
+<div class="container-fluid bg-light about pb-5">
+    <div class="container pb-5">
+        <div class="row g-5">
+            <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
+                <div class="bg-white rounded p-5 h-100">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-12">
+                            <div class="rounded bg-light">
+                                <img src="@Model.HaberImage" class="img-fluid rounded w-100" alt="">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="text-container">
+                                <p>@Model.HaberTitle</p>
+                                <h4 class="mb-0 text-dark">@Model.HaberDescription</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    .text-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+        .text-container p {
+            color: blue; /* As you prefer blue for text */
+        }
+
+        .text-container h4 {
+            overflow-wrap: break-word;
+            word-break: break-word;
+            /* Alternatif: break-all */
+        }
+</style>

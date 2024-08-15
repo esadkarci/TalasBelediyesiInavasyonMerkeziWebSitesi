@@ -1,0 +1,31 @@
+﻿@using EntityLayer_HizmetPortal.Concrate
+@model List<Stage>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Statues</th>
+        <th>DevreDışı</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.StageId</td>
+            <td>@item.StageName</td>
+            <td>@item.StageStatues</td>
+            <td><a href="/AdminStage/ToggleStatus/@item.StageId" class="btn btn-danger">DevreDışı</a></td>
+            <td><a href="/AdminStage/Edit/@item.StageId" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/AdminStage/Create" class="btn btn-info">yeni stage</a>

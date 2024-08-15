@@ -1,0 +1,25 @@
+﻿@model EntityLayer_HizmetPortal.Concrate.Service
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>güncelleme sayfası</h1>
+<br />
+@using (Html.BeginForm("Edit", "AdminService", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Service ID")
+        @Html.TextBoxFor(x => x.ServiceId, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Service Title")
+        @Html.TextBoxFor(x => x.ServiceTitle, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Service Açıklama")
+        @Html.TextBoxFor(x => x.ServiceDescription, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-success">Güncelle</button>
+}

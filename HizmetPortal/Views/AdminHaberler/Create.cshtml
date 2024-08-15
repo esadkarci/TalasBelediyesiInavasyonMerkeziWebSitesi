@@ -1,0 +1,31 @@
+﻿@model EntityLayer_HizmetPortal.Concrate.Haberler
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>yeni haber ekleme sayfası</h1>
+<br />
+@using (Html.BeginForm("Create", "AdminHaberler", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.Label("Haber Title")
+        @Html.TextBoxFor(x => x.HaberTitle, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.HaberTitle)
+        <br />
+        @Html.Label("Haber Destcription")
+        @Html.TextAreaFor(x => x.HaberDescription, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.HaberDescription)
+        <br />
+        @Html.Label("Haber Image")
+        <input type="file" name="HaberImage" />
+
+        <br />
+
+
+        <div class="form-group">
+            @Html.Label("Tarih (Date)") <input type="date" id="HaberDate" name="HaberDate" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Ekle</button>
+    </div>
+}

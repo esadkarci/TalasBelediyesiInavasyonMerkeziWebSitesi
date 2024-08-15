@@ -1,0 +1,34 @@
+﻿@using EntityLayer_HizmetPortal.Concrate
+@model List<Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered">
+    <div><tr>
+        <th>PersonelId</th>
+        <th>PersonelIsim</th>
+        <th>PersonelSoyisim</th>
+        <th>PersonelUnvan</th>
+        <th>PersonelImage</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr></div>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PersonelId</td>
+            <td>@item.PersonelIsim</td>
+            <td>@item.PersonelSoyisim</td>
+            <td>@item.PersonelUnvan</td>
+            <td>@item.PersonelImage</td>
+            <td><a href="/AdminPersonel/Edit/@item.PersonelId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/AdminPersonel/Delete/@item.PersonelId" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/AdminPersonel/Create" class="btn btn-info">Yeni Personel</a>

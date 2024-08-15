@@ -1,0 +1,23 @@
+﻿@model EntityLayer_HizmetPortal.Concrate.Service
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>yeni servis ekleme sayfası</h1>
+<br />
+@using (Html.BeginForm("Create", "AdminService", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Service adı")
+        @Html.TextBoxFor(x => x.ServiceTitle, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ServiceTitle)
+        <br />
+        @Html.Label("Açıklama")
+        @Html.TextAreaFor(x => x.ServiceDescription, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ServiceDescription)
+        <br />
+        <button type="submit" class="btn btn-primary">Ekle</button>
+    </div>
+}

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HizmetPortal", "HizmetPortal\HizmetPortal.csproj", "{8FB93E69-7E97-477D-8716-2FD3CECB2133}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcessLayer_HizmetPortal", "DataAcessLayer_HizmetPortal\DataAcessLayer_HizmetPortal.csproj", "{0F5EA6F4-A54C-4E4F-83B0-C536BCBCA433}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityLayer_HizmetPortal", "EntityLayer_HizmetPortal\EntityLayer_HizmetPortal.csproj", "{EFBF9E1B-407E-4591-9375-DF91689CF2E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer_HizmetPortal", "BusinessLayer_HizmetPortal\BusinessLayer_HizmetPortal.csproj", "{81E11505-3249-452D-B262-85290406371D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FB93E69-7E97-477D-8716-2FD3CECB2133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB93E69-7E97-477D-8716-2FD3CECB2133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB93E69-7E97-477D-8716-2FD3CECB2133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB93E69-7E97-477D-8716-2FD3CECB2133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F5EA6F4-A54C-4E4F-83B0-C536BCBCA433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5EA6F4-A54C-4E4F-83B0-C536BCBCA433}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5EA6F4-A54C-4E4F-83B0-C536BCBCA433}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5EA6F4-A54C-4E4F-83B0-C536BCBCA433}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFBF9E1B-407E-4591-9375-DF91689CF2E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFBF9E1B-407E-4591-9375-DF91689CF2E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFBF9E1B-407E-4591-9375-DF91689CF2E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFBF9E1B-407E-4591-9375-DF91689CF2E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81E11505-3249-452D-B262-85290406371D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E11505-3249-452D-B262-85290406371D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E11505-3249-452D-B262-85290406371D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E11505-3249-452D-B262-85290406371D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A52AD9E1-11F4-4770-881A-6A54AEC72987}
+	EndGlobalSection
+EndGlobal

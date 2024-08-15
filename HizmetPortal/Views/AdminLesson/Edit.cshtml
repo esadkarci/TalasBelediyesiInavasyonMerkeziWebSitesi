@@ -1,0 +1,36 @@
+﻿@model EntityLayer_HizmetPortal.Concrate.Lesson
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>güncelleme sayfası</h1>
+<br />
+@using (Html.BeginForm("Edit", "AdminLesson", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Lesson Id")
+        @Html.TextBoxFor(x => x.LessonId, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Lesson Name")
+        @Html.TextBoxFor(x => x.LessonName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Lesson Title")
+        @Html.TextBoxFor(x => x.LessonTitle, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Hizmet Destcription")
+        @Html.TextBoxFor(x => x.LessonDestcription, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Lesson Image")
+        @Html.TextBoxFor(x => x.LessonImage, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Lesson Statues")
+        @Html.TextBoxFor(x => x.LessonStatues, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-success">Güncelle</button>
+}

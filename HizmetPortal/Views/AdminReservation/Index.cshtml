@@ -1,0 +1,34 @@
+﻿@using EntityLayer_HizmetPortal.Concrate
+@model List<Event>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div>
+    <table class="table table-bordered">
+        <div><div><tr>
+            <th>ID</th>
+            <th>Event Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Capacity</th>
+            <th>View Reservations</th>
+        </tr></div></div>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EventId</td>
+                <td>@item.EventTitle</td>
+                <td>@item.EventDescription</td>
+                <td>@item.EventStatues</td>
+                <td>@item.EventDate</td>
+                <td>@item.EventCapacity</td>
+                <td>
+                    <a href="@Url.Action("ViewReservations", "AdminReservation", new { eventId = item.EventId })" class="btn btn-info">View</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

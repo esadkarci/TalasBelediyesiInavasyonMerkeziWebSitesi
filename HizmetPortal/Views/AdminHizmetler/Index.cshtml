@@ -1,0 +1,37 @@
+﻿@using EntityLayer_HizmetPortal.Concrate
+@model List<Hizmetler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>HizmetId</th>
+        <th>HizmetName</th>
+        <th>HizmetDestcription</th>
+        <th>HizmetImage</th>
+        <th>HizmetIcon</th>
+        <th>HizmetStatues</th>
+        <th>DevreDışı</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.HizmetId</td>
+            <td>@item.HizmetName</td>
+            <td>@item.HizmetDestcription</td>
+            <td>@item.HizmetImage</td>
+            <td>@item.HizmetIcon</td>
+            <td>@item.HizmetStatues</td>
+            <td><a href="/AdminHizmetler/ToggleStatus/@item.HizmetId" class="btn btn-danger">DevreDışı</a></td>
+            <td><a href="/AdminHizmetler/Edit/@item.HizmetId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/AdminHizmetler/Delete/@item.HizmetId" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/AdminHizmetler/Create" class="btn btn-info">yeni kategori</a>

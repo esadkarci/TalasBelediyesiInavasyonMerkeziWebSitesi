@@ -1,0 +1,136 @@
+﻿@using EntityLayer_HizmetPortal.Concrate
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Haberler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/UygulamaLayout.cshtml";
+}
+
+
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row g-4 justify-content-center">
+        @foreach (var haber in Model)
+        {
+            <div class="col-md-4">
+                <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="blog-img">
+                        <img src="@haber.HaberImage" class="img-fluid rounded-top w-100" alt="">
+                        <div class="blog-categiry py-2 px-4">
+                            <span>Business</span>
+                        </div>
+                    </div>
+                    <div class="blog-content p-4">
+                        <div class="blog-comment d-flex justify-content-between mb-3">
+                            <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
+                            <div class="small"><span class="fa fa-calendar text-primary"></span> @haber.HaberDate</div>
+                            <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
+                        </div>
+                        <a href="/Haberler/HaberDetailsIndex/@haber.HaberId" class="h4 d-inline-block mb-3">@haber.HaberTitle</a>
+                        <p class="mb-3">@haber.HaberDescription.Substring(0, Math.Min(haber.HaberDescription.Length, 75))@(haber.HaberDescription.Length > 75 ? "..." : "")</p>
+
+                        <a href="/Haberler/HaberDetailsIndex/@haber.HaberId" class="btn p-0">Read More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@Html.PagedListPager((IPagedList)Model, p => Url.Action("Index", new { p }), new PagedListRenderOptions
+{
+    LiElementClasses = new List<string>
+    {
+        "page-link"
+    }
+})
+
+<style>
+    /*** Blog Start ***/
+
+    .blog-content a {
+        overflow-wrap: break-word;
+        word-break: break-word; /* Alternatif: break-all */
+    }
+    .blog-content p {
+        overflow-wrap: break-word;
+    }
+    .blog .blog-item {
+        border-radius: 10px;
+        transition: 0.5s;
+        overflow: hidden; /* İçeriğin kenarlardan taşmasını önler */
+    }
+
+        .blog .blog-item:hover {
+            box-shadow: 0 0 45px rgba(0, 0, 0, .1);
+        }
+
+            .blog .blog-item:hover .blog-content {
+                background: var(--bs-white);
+            }
+
+        .blog .blog-item .blog-img {
+            position: relative;
+            height: 200px; /* Resim konteynerinin yüksekliği ayarlandı */
+            overflow: hidden;
+        }
+
+            .blog .blog-item .blog-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .blog .blog-item .blog-img::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 0;
+                top: 0;
+                left: 0;
+                background: rgba(1, 95, 201, .2);
+                transition: 0.5s;
+                z-index: 1;
+            }
+
+        .blog .blog-item:hover .blog-img::after {
+            height: 100%;
+        }
+
+        .blog .blog-item .blog-img .blog-categiry {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border-top-left-radius: 10px;
+            display: inline-flex;
+            color: var(--bs-white);
+            background: var(--bs-primary);
+            z-index: 9;
+        }
+
+        .blog .blog-item .blog-content {
+            background: var(--bs-light);
+            padding: 15px;
+            word-break: break-all;
+            overflow-wrap: break-word;
+            white-space: normal;
+            /* overflow: hidden; - Bu özelliği kaldırıyoruz */
+            max-width: 100%;
+        }
+
+
+            .blog .blog-item .blog-content a.btn {
+                color: var(--bs-dark);
+            }
+
+        .blog .blog-item:hover .blog-content a.btn:hover {
+            color: var(--bs-primary);
+        }
+
+ 
+    /*** Blog End ***/
+</style>

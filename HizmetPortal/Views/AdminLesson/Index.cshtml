@@ -1,0 +1,37 @@
+﻿@using EntityLayer_HizmetPortal.Concrate
+@model List<Lesson>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>LessonId</th>
+        <th>LessonName</th>
+        <th>LessonTitle</th>
+        <th>LessonDestcription</th>
+        <th>LessonImage</th>
+        <th>LessonStatues</th>
+        <th>DevreDışı</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.LessonId</td>
+            <td>@item.LessonName</td>
+            <td>@item.LessonTitle</td>
+            <td>@item.LessonDestcription</td>
+            <td>@item.LessonImage</td>
+            <td>@item.LessonStatues</td>
+            <td><a href="/AdminLesson/ToggleStatus/@item.LessonId" class="btn btn-danger">DevreDışı</a></td>
+            <td><a href="/AdminLesson/Edit/@item.LessonId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/AdminLesson/Delete/@item.LessonId" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/AdminLesson/Create" class="btn btn-info">yeni kategori</a>

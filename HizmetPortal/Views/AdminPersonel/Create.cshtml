@@ -1,0 +1,30 @@
+﻿@model EntityLayer_HizmetPortal.Concrate.Personel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Yeni personel ekleme sayfası</h1>
+<br />
+@using (Html.BeginForm("Create", "AdminPersonel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.Label("Personel adı")
+        @Html.TextBoxFor(x => x.PersonelIsim, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PersonelIsim)
+        <br />
+        @Html.Label("Personel Soyadı")
+        @Html.TextAreaFor(x => x.PersonelSoyisim, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PersonelSoyisim)
+        <br />
+        @Html.Label("Personel Ünvan")
+        @Html.TextBoxFor(x => x.PersonelUnvan, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PersonelUnvan)
+        <br />
+        @Html.Label("Personel İmage")
+        <input type="file" name="PersonelImage" />
+        <br />
+        <button type="submit" class="btn btn-primary">Ekle</button>
+    </div>
+}
