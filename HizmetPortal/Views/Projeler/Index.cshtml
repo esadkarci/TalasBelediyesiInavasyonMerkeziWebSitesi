@@ -116,54 +116,72 @@
                 margin: 0;
             }
     </style>*@
+
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
-            <div class="project-div">
-                <img src="~/Image/indir5.png" alt="Image 1">
-                <p>Textdsaaaaaaaaaaaaaaaaaaaaaaaaddddd  1</p>
-                <p></p>
+        @foreach (var project in Model)
+        {
+            <div class="col-md-4">
+                <div class="project-div">
+                    <img src="@project.ProjectImage" alt="Project Image">
+                    @if (project.StageId == 1)
+                    {
+                        // Label color green
+                        <span class="label" style="background-color: red;">Hazırlık Aşaması</span>
+                    }
+                    else if (project.StageId == 2)
+                    {
+                        // Label color yellow
+                        <span class="label" style="background-color: orange;">Devam Ediyor</span>
+                    }
+                    else if (project.StageId == 3)
+                    {
+                        // Label color yellow
+                        <span class="label" style="background-color: green;">Tamamlnadı</span>
+                    }
+                    <p>@project.ProjectName</p>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="project-div">
-                <img src="~/Image/indir6.png" alt="Image 2">
-                <p>Text 2</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="project-div">
-                <img src="~/Image/gürz_5.png" alt="Image 3">
-                <p>Text 3</p>
-            </div>
-        </div>
+        }
     </div>
 </div>
 
 <style>
     .project-div {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         width: 100%;
-        border-radius: 15px; /* Rounded corners */
-        overflow: hidden; /* Hide overflow */
+        border-radius: 15px;
+        overflow: hidden;
     }
 
         .project-div img {
             width: 100%;
             object-fit: cover;
-            margin-bottom: -5px; /* Pull the bottom of the image closer to the text */
+        }
+
+        .project-div .label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #ffffff;
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 3px;
+            z-index: 1;
         }
 
         .project-div p {
             overflow-wrap: break-word;
             word-break: break-word;
-            color: #ffffff; /* White text */
-            background-color: var(--bs-primary); /* Blue background */
+            color: #ffffff;
+            background-color: var(--bs-primary);
             text-align: center;
             padding: 10px;
             margin: 0;
         }
 </style>
+
 
