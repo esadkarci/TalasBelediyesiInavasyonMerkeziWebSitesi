@@ -1,0 +1,82 @@
+﻿@model EntityLayer_HizmetPortal.Concrate.Lesson
+@{
+    ViewBag.Title = "LessonDetaylarIndex";
+    Layout = "~/Views/Shared/UygulamaLayout.cshtml";
+}
+
+<div class="container-fluid personel-detail">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-md-10">
+            <div class="detail-card">
+                <div class="row">
+                    <div class="col-md-4 d-flex align-items-center justify-content-center">
+                        <img src="@Model.LessonImage" class="img-fluid rounded" alt="@Model.LessonTitle">
+                    </div>
+                    <div class="col-md-8 d-flex align-items-center">
+                        <div class="text-content">
+                            <center><h2>@Model.LessonTitle</h2></center>
+                            
+                            <p>@Model.LessonDestcription</p> <!-- Display the person's résumé -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .personel-detail {
+        height: 100vh; /* Full screen height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f9fa; /* Light background for contrast */
+    }
+
+    .detail-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        height: auto;
+        padding: 20px;
+    }
+
+    .label {
+        background-color: green;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px; /* Köşe yuvarlatma değeri */
+    }
+
+    .detail-card .row {
+        margin: 0;
+    }
+
+    .detail-card img {
+        max-height: 100%; /* Ensure the image fits within its column */
+        width: auto; /* Maintain aspect ratio */
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .detail-card .text-content {
+        padding: 20px;
+    }
+
+    .personel-detail p {
+        overflow-wrap: break-word;
+        word-break: break-word; /* Alternative: break-all */
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .personel-detail h2, .personel-detail h4 {
+        color: var(--bs-primary);
+        overflow-wrap: break-word;
+        word-break: break-word; /* Alternative: break-all */
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+</style>
+

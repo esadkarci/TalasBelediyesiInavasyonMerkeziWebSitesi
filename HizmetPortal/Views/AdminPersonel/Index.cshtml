@@ -25,7 +25,12 @@
             <td>@item.PersonelId</td>
             <td>@item.PersonelIsim</td>
             <td>@item.PersonelSoyisim</td>
-            <td>@item.PersonelCV</td>
+            
+            <td>
+                @(item.PersonelCV != null ? (item.PersonelCV.Length > 20 ? item.PersonelCV.Substring(0, 20) + "..." : item.PersonelCV) : "Bilgi yok")
+            </td>
+
+            
             <td>@item.PersonelUnvan</td>
             <td>@item.PersonelImage</td>
             <td><a href="/AdminPersonel/Edit/@item.PersonelId" class="btn btn-warning">Güncelle</a></td>

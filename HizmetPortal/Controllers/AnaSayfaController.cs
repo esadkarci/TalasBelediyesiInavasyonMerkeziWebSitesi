@@ -14,7 +14,7 @@ namespace HizmetPortal.Controllers
         DuyurularManager dm = new DuyurularManager(new EfDuyurularDal());
         HizmetlerManager hm = new HizmetlerManager(new EfHizmetlerDal());
         LessonManager lm = new LessonManager(new EfLessonDal());
-        ProjectManager pm =new ProjectManager(new EfProjectDal());
+        
         public ActionResult AnaSayfaIndex()
         {
             return View();
@@ -31,7 +31,7 @@ namespace HizmetPortal.Controllers
         }
         public ActionResult LessonIndex()
         {
-            var lessons = pm.ProjectGetAll();
+            var lessons = lm.LessonGetAll();
             return View(lessons);
         }
     }

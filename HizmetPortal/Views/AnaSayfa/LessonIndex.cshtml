@@ -1,5 +1,6 @@
 ﻿@using EntityLayer_HizmetPortal.Concrate
-@model List<Project>
+@model List<Lesson>
+
 
 @{
     
@@ -18,26 +19,15 @@
 <div class="container">
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            @foreach (var project in Model)
+            @foreach (var lesson in Model)
             {
                 <div class="swiper-slide">
                     <div class="project-div">
-                        <img src="@project.ProjectImage" alt="Project Image">
-                        @if (project.StageId == 1)
-                        {
-                            <a href="/Projeler/YapılmasıPlananProjelerIndex" class="label label-success" style="background-color: red;">Hazırlık Aşaması</a>
-                        }
-                        else if (project.StageId == 2)
-                        {
-                            <a href="/Projeler/YapımıDevamEdenProjelerIndex" class="label label-success" style="background-color: orange;">Yapımı Devam Ediyor</a>
-                        }
-                        else if (project.StageId == 3)
-                        {
-                            <a href="/Projeler/YapımıTamamlananProjelerIndex" class="label label-success" style="background-color: green;">Yapımı Tamamlandı</a>
-                        }
+                        <img src="@lesson.LessonImage" alt="Project Image">
+                        
                         <center>
-                            <a href="/Projeler/ProjelerDetaylarIndex/@project.ProjectId" style="text-decoration: none;">
-                                <p>@project.ProjectTitle</p>
+                            <a href="/Lesson/ProjelerDetaylarIndex/@lesson.LessonId" style="text-decoration: none;">
+                                <p>@lesson.LessonName</p>
                             </a>
                         </center>
                     </div>
