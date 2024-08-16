@@ -60,32 +60,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IAppointmentService.cs" />
     <Compile Include="Abstract\IDuyurularService.cs" />
-    <Compile Include="Abstract\IEventSerrvice.cs" />
     <Compile Include="Abstract\IHaberlerService.cs" />
     <Compile Include="Abstract\IHizmetlerService.cs" />
     <Compile Include="Abstract\ILessonService.cs" />
     <Compile Include="Abstract\IPersonelService.cs" />
     <Compile Include="Abstract\IProjectService.cs" />
-    <Compile Include="Abstract\IReservationService.cs" />
-    <Compile Include="Abstract\IServiceService.cs" />
     <Compile Include="Abstract\IStageService.cs" />
-    <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrate\DuyurularManager.cs" />
-    <Compile Include="Concrate\EventMManager.cs" />
     <Compile Include="Concrate\HaberlerManager.cs" />
     <Compile Include="Concrate\HizmetlerManager.cs" />
     <Compile Include="Concrate\LessonManager.cs" />
     <Compile Include="Concrate\PersonelManager.cs" />
     <Compile Include="Concrate\ProjectManager.cs" />
-    <Compile Include="Concrate\ReservationManager.cs" />
-    <Compile Include="Concrate\ServiceAppointment.cs" />
-    <Compile Include="Concrate\ServiceManager.cs" />
     <Compile Include="Concrate\StageManager.cs" />
-    <Compile Include="Concrate\UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValidationRules\ServiceValidation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

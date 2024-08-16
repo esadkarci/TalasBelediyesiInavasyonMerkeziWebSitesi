@@ -16,7 +16,7 @@ namespace HizmetPortal.Controllers
         // GET: AdminDuyurular
         DuyurularManager dm = new DuyurularManager(new EfDuyurularDal());
         Context context = new Context();
-
+        [Authorize]
         public ActionResult Index()
         {
             var duyurulars = dm.Getlist();

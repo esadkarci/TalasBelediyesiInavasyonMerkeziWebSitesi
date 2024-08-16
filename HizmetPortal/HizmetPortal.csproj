@@ -149,13 +149,8 @@
     <Compile Include="Controllers\AdminLoginController.cs" />
     <Compile Include="Controllers\AdminPersonelController.cs" />
     <Compile Include="Controllers\AdminProjectController.cs" />
-    <Compile Include="Controllers\AdminRandevuController.cs" />
-    <Compile Include="Controllers\AdminReservationController.cs" />
-    <Compile Include="Controllers\AdminServiceController.cs" />
     <Compile Include="Controllers\AdminStageController.cs" />
-    <Compile Include="Controllers\AdminUserController.cs" />
-    <Compile Include="Controllers\DuyurularController.cs" />
-    <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\AnaSayfaController.cs" />
     <Compile Include="Controllers\HaberlerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
@@ -2063,10 +2058,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Service\Index.cshtml" />
-    <Content Include="Views\AdminService\Index.cshtml" />
-    <Content Include="Views\AdminService\Create.cshtml" />
-    <Content Include="Views\AdminService\Edit.cshtml" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="startbootstrap-sb-admin-2-gh-pages\.browserslistrc" />
     <Content Include="startbootstrap-sb-admin-2-gh-pages\.gitignore" />
@@ -2247,19 +2238,6 @@
     <Content Include="startbootstrap-sb-admin-2-gh-pages\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="startbootstrap-sb-admin-2-gh-pages\vendor\jquery\jquery.min.map" />
     <Content Include="startbootstrap-sb-admin-2-gh-pages\vendor\jquery\jquery.slim.min.map" />
-    <Content Include="Views\AdminRandevu\Index.cshtml" />
-    <Content Include="Views\AdminRandevu\Create.cshtml" />
-    <Content Include="Views\AdminUser\Index.cshtml" />
-    <Content Include="Views\AdminUser\Create.cshtml" />
-    <Content Include="Views\AdminUser\Edit.cshtml" />
-    <Content Include="Views\Event\Index.cshtml" />
-    <Content Include="Views\Event\Create.cshtml" />
-    <Content Include="Views\Event\Edit.cshtml" />
-    <Content Include="Views\AdminReservation\Index.cshtml" />
-    <Content Include="Views\AdminReservation\ViewReservations.cshtml" />
-    <Content Include="Views\AdminReservation\AddReservation.cshtml" />
-    <Content Include="Views\AdminReservation\Reservations.cshtml" />
-    <Content Include="Views\AdminReservation\Create.cshtml" />
     <Content Include="Views\AdminPersonel\Index.cshtml" />
     <Content Include="Views\AdminPersonel\Create.cshtml" />
     <Content Include="Views\AdminPersonel\Edit.cshtml" />
@@ -2292,13 +2270,20 @@
     <Content Include="Views\Personel\Index.cshtml" />
     <Content Include="Views\Personel\PersonelDetailsIndex.cshtml" />
     <Content Include="Views\Projeler\Index.cshtml" />
+    <Content Include="Views\AnaSayfa\AnaIndex.cshtml" />
+    <Content Include="Views\AnaSayfa\DuyurlarIndex.cshtml" />
+    <Content Include="Views\AnaSayfa\HizmetlerIndex.cshtml" />
+    <Content Include="Views\AnaSayfa\AnaSayfaIndex.cshtml" />
+    <Content Include="Views\Projeler\YapılmasıPlananProjelerIndex.cshtml" />
+    <Content Include="Views\Projeler\YapımıDevamEdenProjelerIndex.cshtml" />
+    <Content Include="Views\Projeler\YapımıTamamlananProjelerIndex.cshtml" />
+    <Content Include="Views\Projeler\ProjelerDetaylarIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Icon\" />
     <Folder Include="Image\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Personeş\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

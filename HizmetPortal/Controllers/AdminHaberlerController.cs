@@ -15,6 +15,7 @@ namespace HizmetPortal.Controllers
     {
         HaberlerManager hm = new HaberlerManager(new EfHaberlerDal());
         Context context = new Context();
+        [Authorize]
         public ActionResult Index()
         {
             var haberlers= hm.Getlist();

@@ -1,5 +1,4 @@
 ﻿using BusinessLayer_HizmetPortal.Concrate;
-using BusinessLayer_HizmetPortal.ValidationRules;
 using DataAcessLayer_HizmetPortal.Concrate;
 using DataAcessLayer_HizmetPortal.EntityFramework;
 using EntityLayer_HizmetPortal.Concrate;

@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "AnaSayfaIndex";
+    Layout = "~/Views/Shared/UygulamaLayout.cshtml";
+}
+
+<!-- Duyurular -->
+<div class="duyurular-section">
+    @Html.Action("DuyurlarIndex", "AnaSayfa")
+</div>
+
+<!-- Hizmetler -->
+<div class="hizmetler-section">
+    @Html.Action("HizmetlerIndex", "AnaSayfa")
+</div>
+
+<style>
+    .duyurular-section {
+        margin-bottom: 50px;
+    }
+
+    .hizmetler-section {
+        margin-top: 50px;
+    }
+</style>

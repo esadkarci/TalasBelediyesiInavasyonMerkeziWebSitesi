@@ -2,9 +2,10 @@
 @model List<Project>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "YapılmasıPlananProjelerIndex";
     Layout = "~/Views/Shared/UygulamaLayout.cshtml";
 }
+
 <br />
 <br />
 <br />
@@ -13,30 +14,24 @@
     <div class="row">
         @foreach (var project in Model)
         {
+            if (project.StageId == 1)
+            {
             <div class="col-md-4">
                 <div class="project-div">
                     <img src="@project.ProjectImage" alt="Project Image">
-                    @if (project.StageId == 1)
-                    {
-                        <a href="/Projeler/YapılmasıPlananProjelerIndex" class="label label-success" style="background-color: red;">Hazırlık Aşaması</a>
-                    }
-                    else if (project.StageId == 2)
-                    {
-                        // Label color yellow
-                        <a href="/Projeler/YapımıDevamEdenProjelerIndex" class="label label-success" style="background-color: orange;">Yapımı Devam Ediyor</a>
-                    }
-                    else if (project.StageId == 3)
-                    {
-                        // Label color yellow
-                     <a href="/Projeler/YapımıTamamlananProjelerIndex" class="label label-success" style="background-color: green;">Yapımı Tamamlandı</a>
-                    }
-                    <center>
-                        <a href="/Projeler/ProjelerDetaylarIndex/@project.ProjectId" style="text-decoration: none;">
-                            <p>@project.ProjectTitle</p>
-                        </a>
-                    </center>
+                     
+                        <span class="label" style="background-color: red;">Hazırlık Aşaması</span>
+                   
+                 
+                        <center>
+                            <a href="/Projeler/ProjelerDetaylarIndex/@project.ProjectId" style="text-decoration: none;">
+                                <p>@project.ProjectTitle</p>
+                            </a>
+                        </center>
                 </div>
             </div>
+            }
+
         }
     </div>
 </div>
@@ -78,5 +73,3 @@
             margin: 0;
         }
 </style>
-
-

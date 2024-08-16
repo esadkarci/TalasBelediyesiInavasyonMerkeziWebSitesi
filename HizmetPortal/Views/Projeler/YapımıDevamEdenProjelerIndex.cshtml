@@ -1,0 +1,75 @@
+﻿@using EntityLayer_HizmetPortal.Concrate
+@model List<Project>
+
+@{
+    ViewBag.Title = "YapımıDevamEdenProjelerIndex";
+    Layout = "~/Views/Shared/UygulamaLayout.cshtml";
+}
+
+<br />
+<br />
+<br />
+
+<div class="container">
+    <div class="row">
+        @foreach (var project in Model)
+        {
+            if (project.StageId == 2)
+            {
+                <div class="col-md-4">
+                    <div class="project-div">
+                        <img src="@project.ProjectImage" alt="Project Image">
+
+                        <span class="label" style="background-color: orange;">Yapımı Devam Ediyor</span>
+
+
+                        <center>
+                            <a href="/Projeler/ProjelerDetaylarIndex/@project.ProjectId" style="text-decoration: none;">
+                                <p>@project.ProjectTitle</p>
+                            </a>
+                        </center>
+                    </div>
+                </div>
+            }
+
+        }
+    </div>
+</div>
+
+<style>
+    .project-div {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+        .project-div img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .project-div .label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #ffffff;
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 3px;
+            z-index: 1;
+        }
+
+        .project-div p {
+            overflow-wrap: break-word;
+            word-break: break-word;
+            color: #ffffff;
+            background-color: var(--bs-primary);
+            text-align: center;
+            padding: 10px;
+            margin: 0;
+        }
+</style>

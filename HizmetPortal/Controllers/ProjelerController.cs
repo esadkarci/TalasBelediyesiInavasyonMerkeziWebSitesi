@@ -14,8 +14,28 @@ namespace HizmetPortal.Controllers
         ProjectManager pm = new ProjectManager(new EfProjectDal());
         public ActionResult Index()
         {
-            var personels = pm.ProjectGetAll();
-            return View(personels);           
+            var projelers = pm.ProjectGetAll();
+            return View(projelers);           
+        }
+        public ActionResult YapılmasıPlananProjelerIndex()
+        {
+            var projelers = pm.ProjectGetAll();
+            return View(projelers);
+        }
+        public ActionResult YapımıDevamEdenProjelerIndex()
+        {
+            var projelers = pm.ProjectGetAll();
+            return View(projelers);
+        }
+        public ActionResult YapımıTamamlananProjelerIndex()
+        {
+            var projelers = pm.ProjectGetAll();
+            return View(projelers);
+        }
+        public ActionResult ProjelerDetaylarIndex(int id)
+        {
+            var projelers = pm.ProjectGetById(id);
+            return View(projelers);
         }
     }
 }

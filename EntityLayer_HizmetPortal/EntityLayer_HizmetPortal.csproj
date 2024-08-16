@@ -52,18 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrate\Admin.cs" />
-    <Compile Include="Concrate\Appointment.cs" />
     <Compile Include="Concrate\Duyurular.cs" />
-    <Compile Include="Concrate\Event.cs" />
     <Compile Include="Concrate\Haberler.cs" />
     <Compile Include="Concrate\Hizmetler.cs" />
     <Compile Include="Concrate\Lesson.cs" />
     <Compile Include="Concrate\Personel.cs" />
     <Compile Include="Concrate\Project.cs" />
-    <Compile Include="Concrate\Reservation.cs" />
-    <Compile Include="Concrate\Service.cs" />
     <Compile Include="Concrate\Stage.cs" />
-    <Compile Include="Concrate\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
