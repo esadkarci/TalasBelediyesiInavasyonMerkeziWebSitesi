@@ -15,9 +15,14 @@
         @Html.ValidationMessageFor(x => x.PersonelIsim)
         <br />
         @Html.Label("Personel Soyadı")
-        @Html.TextAreaFor(x => x.PersonelSoyisim, new { @class = "form-control" })
+        @Html.TextBoxFor(x => x.PersonelSoyisim, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.PersonelSoyisim)
         <br />
+        @Html.Label("Personel CV")
+        @Html.TextAreaFor(x => x.PersonelCV, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PersonelCV)
+        <br />
+        
         @Html.Label("Personel Ünvan")
         @Html.TextBoxFor(x => x.PersonelUnvan, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.PersonelUnvan)

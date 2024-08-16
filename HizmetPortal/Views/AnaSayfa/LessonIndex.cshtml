@@ -2,19 +2,25 @@
 @model List<Project>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/UygulamaLayout.cshtml";
+    
+    Layout =null;
 }
-<br />
-<br />
-<br />
+
+
+<!-- Your header section -->
+<div class="header-container">
+    <h1>@ViewBag.Title</h1>
+</div>
+
+<!-- Include Swiper's CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 <div class="container">
-    <div>
-        <div class="row">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
             @foreach (var project in Model)
             {
-                <div class="col-md-4">
+                <div class="swiper-slide">
                     <div class="project-div">
                         <img src="@project.ProjectImage" alt="Project Image">
                         @if (project.StageId == 1)
@@ -23,12 +29,10 @@
                         }
                         else if (project.StageId == 2)
                         {
-                            // Label color yellow
                             <a href="/Projeler/YapımıDevamEdenProjelerIndex" class="label label-success" style="background-color: orange;">Yapımı Devam Ediyor</a>
                         }
                         else if (project.StageId == 3)
                         {
-                            // Label color yellow
                             <a href="/Projeler/YapımıTamamlananProjelerIndex" class="label label-success" style="background-color: green;">Yapımı Tamamlandı</a>
                         }
                         <center>
@@ -40,10 +44,57 @@
                 </div>
             }
         </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
 </div>
 
+<!-- Include Swiper's JavaScript -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+
 <style>
+    /* Header-specific styles */
+    .header-container h1 {
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Swiper-specific styles */
+    .swiper-container {
+        padding: 20px 0;
+        margin-bottom: 30px;
+        overflow: hidden; /* Prevents overflow */
+        width: 100%; /* Ensures it doesn't exceed parent width */
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%; /* Prevents slides from exceeding container width */
+    }
+
     .project-div {
         position: relative;
         display: flex;
@@ -80,5 +131,3 @@
             margin: 0;
         }
 </style>
-
-

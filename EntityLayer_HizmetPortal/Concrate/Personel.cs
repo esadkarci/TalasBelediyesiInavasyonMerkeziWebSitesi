@@ -21,6 +21,9 @@ namespace EntityLayer_HizmetPortal.Concrate
         public string PersonelUnvan { get; set; }
         [StringLength(300)]
         public string PersonelImage { get; set; }
+        [StringLength(7600)]
+        public string PersonelCV { get; set; }
+
 
     }
 

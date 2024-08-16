@@ -2278,6 +2278,7 @@
     <Content Include="Views\Projeler\YapımıDevamEdenProjelerIndex.cshtml" />
     <Content Include="Views\Projeler\YapımıTamamlananProjelerIndex.cshtml" />
     <Content Include="Views\Projeler\ProjelerDetaylarIndex.cshtml" />
+    <Content Include="Views\AnaSayfa\LessonIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

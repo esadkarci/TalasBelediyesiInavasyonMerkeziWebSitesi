@@ -10,17 +10,14 @@
 @using (Html.BeginForm("Create", "AdminProject", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="form-group">
-        @Html.Label("Proje Adı")
-        @Html.TextBoxFor(x => x.ProjectName, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.ProjectName)
-        <br />
+        
         @Html.Label("Proje Başlığı")
         @Html.TextAreaFor(x => x.ProjectTitle, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.ProjectTitle)
         <br />
         @Html.Label("Proje Açıklaması")
-        @Html.TextAreaFor(x => x.ProjectDestcription, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.ProjectDestcription)
+        @Html.TextAreaFor(x => x.ProjectDescription, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ProjectDescription)
         <br />
         @Html.Label("Proje Görseli")
         <input type="file" name="ProjectImage" />
