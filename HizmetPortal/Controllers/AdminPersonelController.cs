@@ -1,7 +1,9 @@
 ﻿using BusinessLayer_HizmetPortal.Concrate;
+using BusinessLayer_HizmetPortal.ValidationRules;
 using DataAcessLayer_HizmetPortal.Concrate;
 using DataAcessLayer_HizmetPortal.EntityFramework;
 using EntityLayer_HizmetPortal.Concrate;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,17 +32,34 @@ namespace HizmetPortal.Controllers
         }
         [HttpPost]
         public ActionResult Create(Personel personel)
-        {
-            if (Request.Files.Count > 0)
+        {   //19.08.2024
+            PersonelValidator personelValidator = new PersonelValidator();
+            ValidationResult results = personelValidator.Validate(personel);
+            if (results.IsValid)
             {
-                string dosyaAdi = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
-                string uzanti = Path.GetExtension(Request.Files[0].FileName);
-                string yol = "~/Image/" + dosyaAdi + uzanti;
-                Request.Files[0].SaveAs(Server.MapPath(yol));
-                personel.PersonelImage = "/Image/" + dosyaAdi + uzanti;
+                if (Request.Files.Count > 0)
+                {
+                    string dosyaAdi = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
+                    string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                    string yol = "~/Image/" + dosyaAdi + uzanti;
+                    Request.Files[0].SaveAs(Server.MapPath(yol));
+                    personel.PersonelImage = "/Image/" + dosyaAdi + uzanti;
+                }
+
+                pm.Add(personel);
+                return RedirectToAction("Index");
             }
-            pm.Add(personel);
-            return RedirectToAction("Index");
+
+            else
+            {
+                foreach (var failure in results.Errors)
+                {
+                    ModelState.AddModelError(failure.PropertyName, failure.ErrorMessage);
+                }
+                return View(personel);
+            }
+          
+         
         }
         [HttpGet]
         public ActionResult Edit(int id)

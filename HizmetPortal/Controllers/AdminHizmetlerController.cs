@@ -1,7 +1,10 @@
 ﻿using BusinessLayer_HizmetPortal.Concrate;
+using BusinessLayer_HizmetPortal.ValidationRules;
 using DataAcessLayer_HizmetPortal.Concrate;
 using DataAcessLayer_HizmetPortal.EntityFramework;
 using EntityLayer_HizmetPortal.Concrate;
+using FluentValidation;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,26 +33,42 @@ namespace HizmetPortal.Controllers
         [HttpPost]
         public ActionResult Create(Hizmetler hizmetler)
         {
-            if (Request.Files.Count > 0)
-            {
-                string dosyaAdi = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
-                string uzanti = Path.GetExtension(Request.Files[0].FileName);
-                string yol = "~/Image/" + dosyaAdi + uzanti;
-                Request.Files[0].SaveAs(Server.MapPath(yol));
-                hizmetler.HizmetImage = "/Image/" + dosyaAdi + uzanti;
-            }
-            if (Request.Files.Count > 0 && Request.Files["HizmetIconFile"] != null)
-            {
-                string iconFileName = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
-                string iconExtension = Path.GetExtension(Request.Files[0].FileName);
-                string iconPath = "~/Icon/" + iconFileName + iconExtension;
-                Request.Files["HizmetIconFile"].SaveAs(Server.MapPath(iconPath));
-                hizmetler.HizmetIcon = "/Icon/" + iconFileName + iconExtension;
-            }
+            HizmetlerValidator hizmetlerValidator = new HizmetlerValidator();
+            ValidationResult results = hizmetlerValidator.Validate(hizmetler);
 
-            hm.HizmetlerAdd(hizmetler);
-            return RedirectToAction("Index");
+            if (results.IsValid)
+            {
+                if (Request.Files.Count > 0)
+                {
+                    string dosyaAdi = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
+                    string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                    string yol = "~/Image/" + dosyaAdi + uzanti;
+                    Request.Files[0].SaveAs(Server.MapPath(yol));
+                    hizmetler.HizmetImage = "/Image/" + dosyaAdi + uzanti;
+                }
+
+                if (Request.Files.Count > 0 && Request.Files["HizmetIconFile"] != null)
+                {
+                    string iconFileName = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
+                    string iconExtension = Path.GetExtension(Request.Files[0].FileName);
+                    string iconPath = "~/Icon/" + iconFileName + iconExtension;
+                    Request.Files["HizmetIconFile"].SaveAs(Server.MapPath(iconPath));
+                    hizmetler.HizmetIcon = "/Icon/" + iconFileName + iconExtension;
+                }
+
+                hm.HizmetlerAdd(hizmetler);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var failure in results.Errors)
+                {
+                    ModelState.AddModelError(failure.PropertyName, failure.ErrorMessage);
+                }
+                return View(hizmetler);
+            }               
         }
+
         [HttpGet]
         public ActionResult Edit(int id)
         {

@@ -1,7 +1,9 @@
 ﻿using BusinessLayer_HizmetPortal.Concrate;
+using BusinessLayer_HizmetPortal.ValidationRules;
 using DataAcessLayer_HizmetPortal.Concrate;
 using DataAcessLayer_HizmetPortal.EntityFramework;
 using EntityLayer_HizmetPortal.Concrate;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,17 +33,31 @@ namespace HizmetPortal.Controllers
         [HttpPost]
         public ActionResult Create(Duyurular duyurular)
         {
-            if (Request.Files.Count > 0)
-            {
-                string dosyaAdi = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
-                string uzanti = Path.GetExtension(Request.Files[0].FileName);
-                string yol = "~/Image/" + dosyaAdi + uzanti;
-                Request.Files[0].SaveAs(Server.MapPath(yol));
-                duyurular.DuyurularImage = "/Image/" + dosyaAdi + uzanti;
-            }
+            DuyurularValidator duyurularValidator = new DuyurularValidator();
+            ValidationResult results = duyurularValidator.Validate(duyurular);
 
-            dm.DuyurularAdd(duyurular);
-            return RedirectToAction("Index");
+            if (results.IsValid)
+            {
+                if (Request.Files.Count > 0)
+                {
+                    string dosyaAdi = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
+                    string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                    string yol = "~/Image/" + dosyaAdi + uzanti;
+                    Request.Files[0].SaveAs(Server.MapPath(yol));
+                    duyurular.DuyurularImage = "/Image/" + dosyaAdi + uzanti;
+                }
+                dm.DuyurularAdd(duyurular);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var failure in results.Errors)
+                {
+                    ModelState.AddModelError(failure.PropertyName, failure.ErrorMessage);
+                }
+                return View(duyurular);
+            }         
+            
         }
         [HttpGet]
         public ActionResult Edit(int id)

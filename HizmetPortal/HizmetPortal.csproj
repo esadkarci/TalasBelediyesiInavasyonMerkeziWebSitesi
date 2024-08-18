@@ -152,9 +152,11 @@
     <Compile Include="Controllers\AdminStageController.cs" />
     <Compile Include="Controllers\AnaSayfaController.cs" />
     <Compile Include="Controllers\HaberlerController.cs" />
+    <Compile Include="Controllers\HakkımızdaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IletisimController.cs" />
     <Compile Include="Controllers\LessonController.cs" />
+    <Compile Include="Controllers\Page404Controller.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Controllers\ProjelerController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2285,6 +2287,8 @@
     <Content Include="Views\AdminHaberler\Edit.cshtml" />
     <Content Include="Views\AnaSayfa\DersIndex.cshtml" />
     <Content Include="Views\Iletisim\Index.cshtml" />
+    <Content Include="Views\Hakkımızda\Index.cshtml" />
+    <Content Include="Views\Page404\Page404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

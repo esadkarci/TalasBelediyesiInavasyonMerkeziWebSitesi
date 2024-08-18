@@ -77,7 +77,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\DuyurularValidator.cs" />
     <Compile Include="ValidationRules\HaberlerValidator.cs" />
+    <Compile Include="ValidationRules\HizmetlerValidator.cs" />
     <Compile Include="ValidationRules\LessonValidator.cs" />
+    <Compile Include="ValidationRules\PersonelValidator.cs" />
+    <Compile Include="ValidationRules\ProjectValidator.cs" />
+    <Compile Include="ValidationRules\StageValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
