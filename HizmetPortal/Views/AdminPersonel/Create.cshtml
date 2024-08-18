@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h1>Yeni personel ekleme sayfası</h1>
+<h1>Yeni Personel Ekleme Sayfası</h1>
 <br />
 @using (Html.BeginForm("Create", "AdminPersonel", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -21,8 +21,7 @@
         @Html.Label("Personel CV")
         @Html.TextAreaFor(x => x.PersonelCV, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.PersonelCV)
-        <br />
-        
+        <br />        
         @Html.Label("Personel Ünvan")
         @Html.TextBoxFor(x => x.PersonelUnvan, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.PersonelUnvan)

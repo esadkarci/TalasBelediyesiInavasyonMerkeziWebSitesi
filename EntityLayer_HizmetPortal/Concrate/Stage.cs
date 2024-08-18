@@ -13,8 +13,7 @@ namespace EntityLayer_HizmetPortal.Concrate
         public int StageId { get; set; }
         [StringLength(20)]
         public string StageName { get; set; }
-        public bool StageStatues { get; set; }
+        public bool StageStatus { get; set; }
         public ICollection<Project> Projects { get; set; }
-
     }
 }

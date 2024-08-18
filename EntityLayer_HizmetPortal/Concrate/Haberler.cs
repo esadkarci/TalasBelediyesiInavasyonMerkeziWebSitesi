@@ -16,9 +16,8 @@ namespace EntityLayer_HizmetPortal.Concrate
         [StringLength(2500)]
         public string HaberDescription { get; set; }
         [StringLength(400)]
-        public string HaberImage { get; set; }
-        
+        public string HaberImage { get; set; }      
         public DateTime HaberDate { get; set; }
-        
+        public bool HaberlerStatus {  get; set; }       
     }
 }

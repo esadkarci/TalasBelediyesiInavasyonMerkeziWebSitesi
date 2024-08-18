@@ -45,7 +45,6 @@ namespace HizmetPortal.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-
             var personelvalue = pm.PersonelGetById(id);
             return View(personelvalue);
         }
@@ -53,6 +52,14 @@ namespace HizmetPortal.Controllers
         [HttpPost]
         public ActionResult Edit(Personel personel)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAdi = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaAdi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                personel.PersonelImage = "/Image/" + dosyaAdi + uzanti;
+            }
             pm.PersonelUpdate(personel);
             return RedirectToAction("Index");
         }
@@ -60,6 +67,11 @@ namespace HizmetPortal.Controllers
         {
             var personelvalues = pm.PersonelGetById(id);
             pm.PersonelDelete(personelvalues);
+            return RedirectToAction("Index");
+        }
+        public ActionResult ToggleStatus(int id)
+        {
+            pm.PersonelToggleStatus(id);
             return RedirectToAction("Index");
         }
     }

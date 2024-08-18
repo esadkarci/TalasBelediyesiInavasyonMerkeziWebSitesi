@@ -16,27 +16,30 @@
         {
             if (project.StageId == 1)
             {
-            <div class="col-md-4">
-                <div class="project-div">
-                    <img src="@project.ProjectImage" alt="Project Image">
-                     
+                <div class="col-md-4">
+                    <div class="project-div">
+                        <img src="@project.ProjectImage" alt="Project Image">
+
                         <span class="label" style="background-color: red;">Hazırlık Aşaması</span>
-                   
-                 
+
+
                         <center>
                             <a href="/Projeler/ProjelerDetaylarIndex/@project.ProjectId" style="text-decoration: none;">
                                 <p>@project.ProjectTitle</p>
                             </a>
                         </center>
+                    </div>
                 </div>
-            </div>
             }
 
         }
     </div>
 </div>
 
+
 <style>
+
+
     .project-div {
         position: relative;
         display: flex;
@@ -73,3 +76,5 @@
             margin: 0;
         }
 </style>
+
+

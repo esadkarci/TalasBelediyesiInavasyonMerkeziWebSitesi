@@ -1,5 +1,6 @@
 ﻿using BusinessLayer_HizmetPortal.Abstract;
 using DataAcessLayer_HizmetPortal.Abstract;
+using DataAcessLayer_HizmetPortal.EntityFramework;
 using EntityLayer_HizmetPortal.Concrate;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,16 @@ namespace BusinessLayer_HizmetPortal.Concrate
         public void DuyurularAdd(Duyurular duyurular)
         {
             _duyurularDal.Add(duyurular);
+        }
+
+        public void DuyurularToggleStatus(int id)
+        {
+            var duyurlar = _duyurularDal.GetById(id);
+            if (duyurlar != null)
+            {
+                duyurlar.DuyurularStatus = !duyurlar.DuyurularStatus;
+                _duyurularDal.Update(duyurlar);
+            }
         }
 
         public void EditDuyurular(Duyurular duyurular)

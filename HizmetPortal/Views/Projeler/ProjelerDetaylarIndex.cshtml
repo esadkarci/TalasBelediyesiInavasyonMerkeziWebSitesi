@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/UygulamaLayout.cshtml";
 }
 
-<div class="container-fluid personel-detail">
+<div class="container-fluid project-detail">
     <div class="row h-100 justify-content-center align-items-center">
         <div class="col-md-10">
             <div class="detail-card">
@@ -28,9 +28,9 @@
                             else if (Model.StageId == 3)
                             {
                                 // Label color yellow
-                                <span class="label" style="background-color: green;">Tamamlnadı</span>
+                                <span class="label" style="background-color: green;">Tamamlandı</span>
                             }
-                            <p>@Model.ProjectDescription</p> <!-- Display the person's résumé -->
+                            <p>@Model.ProjectDescription</p> <!-- Display the project's description -->
                         </div>
                     </div>
                 </div>
@@ -38,8 +38,10 @@
         </div>
     </div>
 </div>
+
 <style>
-    .personel-detail {
+
+    .project-detail {
         height: 100vh; /* Full screen height */
         display: flex;
         align-items: center;
@@ -47,7 +49,7 @@
         background-color: #f8f9fa; /* Light background for contrast */
     }
 
-    .detail-card {
+    .project-detail .detail-card {
         background-color: white;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -55,35 +57,36 @@
         height: auto;
         padding: 20px;
     }
-    .label {
-        background-color: green;
+
+    .project-detail .label {
         color: white;
         padding: 5px 10px;
-        border-radius: 5px; /* Köşe yuvarlatma değeri */
+        border-radius: 5px; /* Rounded corners */
     }
-        .detail-card .row {
-            margin: 0;
-        }
 
-        .detail-card img {
-            max-height: 100%; /* Ensure the image fits within its column */
-            width: auto; /* Maintain aspect ratio */
-            object-fit: cover;
-            border-radius: 10px;
-        }
+    .project-detail .detail-card .row {
+        margin: 0;
+    }
 
-        .detail-card .text-content {
-            padding: 20px;
-        }
+    .project-detail .detail-card img {
+        max-height: 100%; /* Ensure the image fits within its column */
+        width: auto; /* Maintain aspect ratio */
+        object-fit: cover;
+        border-radius: 10px;
+    }
 
-    .personel-detail p {
+    .project-detail .text-content {
+        padding: 20px;
+    }
+
+    .project-detail p {
         overflow-wrap: break-word;
         word-break: break-word; /* Alternative: break-all */
         line-height: 1.6;
         margin-bottom: 20px;
     }
 
-    .personel-detail h2, .personel-detail h4 {
+    .project-detail h2, .project-detail h4 {
         color: var(--bs-primary);
         overflow-wrap: break-word;
         word-break: break-word; /* Alternative: break-all */

@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h1>Güncelleme sayfası</h1>
+<h1>Personel Güncelleme sayfası</h1>
 <br />
-@using (Html.BeginForm("Edit", "AdminPersonel", FormMethod.Post))
+@using (Html.BeginForm("Edit", "AdminPersonel", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="form-group">
         @Html.Label("PersonelId")
@@ -22,7 +22,7 @@
         @Html.TextBoxFor(x => x.PersonelSoyisim, new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.Label("PersonelCVS")
+        @Html.Label("PersonelCV")
         @Html.TextAreaFor(x => x.PersonelCV, new { @class = "form-control" })
     </div>
     <div class="form-group">
@@ -30,8 +30,8 @@
         @Html.TextBoxFor(x => x.PersonelUnvan, new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.Label("PersonelImage")
-        @Html.TextBoxFor(x => x.PersonelImage, new { @class = "form-control" })
+        @Html.Label("Personel Image")
+        <input type="file" name="PersonelImage" class="form-control" />
     </div>
     <button type="submit" class="btn btn-success">Güncelle</button>
 }

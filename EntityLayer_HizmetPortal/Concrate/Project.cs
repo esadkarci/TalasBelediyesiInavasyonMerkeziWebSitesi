@@ -11,16 +11,14 @@ namespace EntityLayer_HizmetPortal.Concrate
     {
         [Key]
         public int ProjectId { get; set; }
-
         [StringLength(100)]
         public string ProjectTitle { get; set; }
         [StringLength(1000)]
         public string ProjectDescription { get; set; }
         [StringLength(200)]
         public string ProjectImage { get; set; }
-        public bool ProjectStatues { get; set; }
+        public bool ProjectStatus { get; set; }
         public int StageId { get; set; }
-        public virtual Stage Stage { get; set; }
-    
+        public virtual Stage Stage { get; set; }    
     }
 }

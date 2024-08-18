@@ -23,8 +23,7 @@ namespace EntityLayer_HizmetPortal.Concrate
         public string PersonelImage { get; set; }
         [StringLength(7600)]
         public string PersonelCV { get; set; }
-
-
+        public bool PersonelStatus { get; set; }
     }
 
 }

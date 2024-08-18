@@ -16,8 +16,8 @@
                     <div class="col-md-8 d-flex align-items-center">
                         <div class="text-content">
                             <center><h2>@Model.PersonelIsim @Model.PersonelSoyisim</h2></center>
-                          <center><h4>@Model.PersonelUnvan</h4></center>  
-                            <p>@Model.PersonelCV</p> <!-- Display the person's résumé -->
+                            <center><h4>@Model.PersonelUnvan</h4></center>
+                            <p>@Model.PersonelCV</p>
                         </div>
                     </div>
                 </div>
@@ -25,49 +25,53 @@
         </div>
     </div>
 </div>
+
 <style>
+
     .personel-detail {
-        height: 100vh; /* Full screen height */
+        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #f8f9fa; /* Light background for contrast */
+        background-color: #f8f9fa;
     }
 
-    .detail-card {
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        height: auto;
-        padding: 20px;
-    }
-
-        .detail-card .row {
-            margin: 0;
-        }
-
-        .detail-card img {
-            max-height: 100%; /* Ensure the image fits within its column */
-            width: auto; /* Maintain aspect ratio */
-            object-fit: cover;
+        .personel-detail .detail-card {
+            background-color: white;
             border-radius: 10px;
-        }
-
-        .detail-card .text-content {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            height: auto;
             padding: 20px;
         }
-    .personel-detail p {
-        overflow-wrap: break-word;
-        word-break: break-word; /* Alternative: break-all */
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
-    .personel-detail h2, .personel-detail h4{
-        color: var(--bs-primary);
-        overflow-wrap: break-word;
-        word-break: break-word; /* Alternative: break-all */
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
+
+            .personel-detail .detail-card .row {
+                margin: 0;
+            }
+
+            .personel-detail .detail-card img {
+                max-height: 100%;
+                width: auto;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+        .personel-detail .text-content {
+            padding: 20px;
+        }
+
+        .personel-detail p {
+            overflow-wrap: break-word;
+            word-break: break-word;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .personel-detail h2, .personel-detail h4 {
+            color: var(--bs-primary);
+            overflow-wrap: break-word;
+            word-break: break-word;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
 </style>

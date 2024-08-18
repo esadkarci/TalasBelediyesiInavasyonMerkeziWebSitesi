@@ -5,30 +5,21 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h1>yeni ders ekleme sayfası</h1>
+<h1>Yeni Ders Ekleme Sayfası</h1>
 <br />
 @using (Html.BeginForm("Create", "AdminLesson", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="form-group">
-        @Html.Label("Lesson Name")
-        @Html.TextBoxFor(x => x.LessonName, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.LessonName)
-        <br />
         @Html.Label("Lesson Title")
-        @Html.TextAreaFor(x => x.LessonTitle, new { @class = "form-control" })
+        @Html.TextBoxFor(x => x.LessonTitle, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.LessonTitle)
         <br />
-        @Html.Label("Lesson Destcription")
-        @Html.TextBoxFor(x => x.LessonDestcription, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.LessonDestcription)
+        @Html.Label("Lesson Description")
+        @Html.TextAreaFor(x => x.LessonDescription, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.LessonDescription)
         <br />
         @Html.Label("Lesson Image")
         <input type="file" name="LessonImage" />
-        
-        <br />
-        @Html.Label("Lesson Statues")
-        @Html.TextBoxFor(x => x.LessonStatues, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.LessonStatues)
         <br />
         <button type="submit" class="btn btn-primary">Ekle</button>
     </div>

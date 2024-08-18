@@ -76,6 +76,14 @@
     <Compile Include="Migrations\202408160714496_mig31.Designer.cs">
       <DependentUpon>202408160714496_mig31.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202408171146334_duzenleme.cs" />
+    <Compile Include="Migrations\202408171146334_duzenleme.Designer.cs">
+      <DependentUpon>202408171146334_duzenleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202408171324150_miglesson.cs" />
+    <Compile Include="Migrations\202408171324150_miglesson.Designer.cs">
+      <DependentUpon>202408171324150_miglesson.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -95,6 +103,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202408160714496_mig31.resx">
       <DependentUpon>202408160714496_mig31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408171146334_duzenleme.resx">
+      <DependentUpon>202408171146334_duzenleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408171324150_miglesson.resx">
+      <DependentUpon>202408171324150_miglesson.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

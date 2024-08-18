@@ -1,0 +1,32 @@
+﻿@model EntityLayer_HizmetPortal.Concrate.Haberler
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Haberler Güncelleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("Edit", "AdminHaberler", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.Label("Haber Id")
+        @Html.TextBoxFor(x => x.HaberId, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Haber Title")
+        @Html.TextBoxFor(x => x.HaberTitle, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Haber Description")
+        @Html.TextAreaFor(x => x.HaberDescription, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Haber Image")
+        <input type="file" name="HaberImage" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Tarih (Date)")
+        @Html.TextBoxFor(x => x.HaberDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+    </div>
+    <button type="submit" class="btn btn-success">Güncelle</button>
+}

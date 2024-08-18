@@ -15,7 +15,6 @@ namespace DataAcessLayer_HizmetPortal.Abstract
         T GetById(int id);
         void Add(T p);
         void Delete(T p);
-        void Update(T p);
-        
+        void Update(T p);       
     }
 }

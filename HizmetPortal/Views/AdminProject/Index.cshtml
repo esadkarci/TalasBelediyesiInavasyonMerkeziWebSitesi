@@ -8,13 +8,12 @@
 <table class="table table-bordered">
     <tr>
         <th>ProjectId</th>
-        
         <th>ProjectTitle</th>
         <th>ProjectDescription</th>
         <th>ProjectImage</th>
-        <th>ProjectStatues</th>
         <th>StageId</th>
-        <th>DevreDışı</th>
+        <th>ProjectStatus</th>
+        <th>ProjectStatusButton</th>
         <th>Güncelle</th>
         <th>Sil</th>
     </tr>
@@ -22,17 +21,33 @@
     {
         <tr>
             <td>@item.ProjectId</td>
-            
-            <td>@item.ProjectTitle</td>
-            <td>@item.ProjectDescription</td>
+            <td>
+                @(item.ProjectTitle != null ? (item.ProjectTitle.Length > 10 ? item.ProjectTitle.Substring(0, 10) + "..." : item.ProjectTitle) : "Bilgi yok")
+            </td>
+            <td>
+                @(item.ProjectDescription != null ? (item.ProjectDescription.Length > 20 ? item.ProjectDescription.Substring(0, 20) + "..." : item.ProjectDescription) : "Bilgi yok")
+            </td>
             <td>@item.ProjectImage</td>
-            <td>@item.ProjectStatues</td>
             <td>@item.StageId</td>
-            <td><a href="/AdminProject/ToggleStatus/@item.ProjectId" class="btn btn-danger">DevreDışı</a></td>
+            <td>@item.ProjectStatus</td>
+            <td>
+                @if (item.ProjectStatus)
+                {
+                    <a href="/AdminProject/ToggleStatus/@item.ProjectId" class="btn btn-danger">
+                        Devre Dışı
+                    </a>
+                }
+                else
+                {
+                    <a href="/AdminProject/ToggleStatus/@item.ProjectId" class="btn btn-success">
+                        Aktif Et
+                    </a>
+                }
+            </td>
             <td><a href="/AdminProject/Edit/@item.ProjectId" class="btn btn-warning">Güncelle</a></td>
             <td><a href="/AdminProject/Delete/@item.ProjectId" class="btn btn-danger">Sil</a></td>
         </tr>
     }
 </table>
 <br />
-<a href="/AdminProject/Create" class="btn btn-info">yeni kategori</a>
+<a href="/AdminProject/Create" class="btn btn-info">yeni proje</a>

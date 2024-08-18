@@ -13,6 +13,7 @@ namespace BusinessLayer_HizmetPortal.Abstract
         void PersonelUpdate(Personel personel);
         Personel PersonelGetById(int id);
         List<Personel> GetAll();
-        void PersonelDelete(Personel personel); 
+        void PersonelDelete(Personel personel);
+        void PersonelToggleStatus(int id);
     }
 }

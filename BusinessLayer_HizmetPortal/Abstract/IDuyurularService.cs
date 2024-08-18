@@ -14,5 +14,6 @@ namespace BusinessLayer_HizmetPortal.Abstract
         Duyurular GetBuyID(int id);
         void DeleteDuyurular(Duyurular duyurular);
         void EditDuyurular(Duyurular duyurular);
+        void DuyurularToggleStatus(int id);
     }
 }

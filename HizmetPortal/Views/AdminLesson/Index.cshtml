@@ -9,12 +9,11 @@
 <table class="table table-bordered">
     <tr>
         <th>LessonId</th>
-        <th>LessonName</th>
         <th>LessonTitle</th>
-        <th>LessonDestcription</th>
+        <th>LessonDescription</th>
         <th>LessonImage</th>
-        <th>LessonStatues</th>
-        <th>DevreDışı</th>
+        <th>LessonStatus</th>
+        <th>LessonStatusButton</th>
         <th>Güncelle</th>
         <th>Sil</th>
     </tr>
@@ -22,16 +21,32 @@
     {
         <tr>
             <td>@item.LessonId</td>
-            <td>@item.LessonName</td>
-            <td>@item.LessonTitle</td>
-            <td>@item.LessonDestcription</td>
+            <td>
+                @(item.LessonTitle != null ? (item.LessonTitle.Length > 10 ? item.LessonTitle.Substring(0, 10) + "..." : item.LessonTitle) : "Bilgi yok")
+            </td>
+            <td>
+                @(item.LessonDescription != null ? (item.LessonDescription.Length > 20 ? item.LessonDescription.Substring(0, 20) + "..." : item.LessonDescription) : "Bilgi yok")
+            </td>
             <td>@item.LessonImage</td>
-            <td>@item.LessonStatues</td>
-            <td><a href="/AdminLesson/ToggleStatus/@item.LessonId" class="btn btn-danger">DevreDışı</a></td>
+            <td>@item.LessonStatues</td>            
+            <td>
+                @if (item.LessonStatues)
+                {
+                    <a href="/AdminLesson/ToggleStatus/@item.LessonId" class="btn btn-danger">
+                        Devre Dışı
+                    </a>
+                }
+                else
+                {
+                    <a href="/AdminLesson/ToggleStatus/@item.LessonId" class="btn btn-success">
+                        Aktif Et
+                    </a>
+                }
+            </td>
             <td><a href="/AdminLesson/Edit/@item.LessonId" class="btn btn-warning">Güncelle</a></td>
             <td><a href="/AdminLesson/Delete/@item.LessonId" class="btn btn-danger">Sil</a></td>
         </tr>
     }
 </table>
 <br />
-<a href="/AdminLesson/Create" class="btn btn-info">yeni kategori</a>
+<a href="/AdminLesson/Create" class="btn btn-info">yeni ders</a>

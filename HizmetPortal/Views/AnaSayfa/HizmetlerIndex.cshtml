@@ -7,7 +7,7 @@
 
 
 
-<div class="container-fluid feature bg-light py-5">
+<div class="container-fluid feature bg-light py-5 hizmetleranasayfa">
     <div class="container py-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
             <h4 class="text-primary">Our Features</h4>
@@ -26,40 +26,41 @@
                         </div>
                         <h4 class="mb-4">@hizmet.HizmetName</h4>
                         <p class="mb-4">
-                            @if (hizmet.HizmetDestcription.Length > 100)
+                            @if (hizmet.HizmetDescription.Length > 100)
                             {
-                                <text>@(hizmet.HizmetDestcription.Substring(0, 100) + "...")</text>
+                                <text>@(hizmet.HizmetDescription.Substring(0, 100) + "...")</text>
                             }
                             else
                             {
-                                <text>@hizmet.HizmetDestcription</text>
+                                <text>@hizmet.HizmetDescription</text>
                             }
                         </p>
-                        <a class="btn btn-primary rounded-pill py-2 px-4" href="/AnaSayfa/AnaIndex/">Learn More</a>
                     </div>
                 </div>
             }
         </div>
     </div>
 </div>
+
 <style>
-    div p {
+    .hizmetleranasayfa p {
         overflow-wrap: break-word;
         word-break: break-word;
     }
 
-    .custom-icon {
+    .hizmetleranasayfa .custom-icon {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 10px; /* Gerekirse padding ekleyin */
-        border-radius: 4px; /* Köşeleri yuvarlatmak isterseniz */
-        background-color: transparent; /* Ensure transparency */
+        padding: 10px;
+        border-radius: 4px;
+        background-color: transparent;
     }
 
-        .custom-icon img.custom-icon-image {
+        .hizmetleranasayfa .custom-icon img.custom-icon-image {
             max-width: 100%;
             height: auto;
             display: block;
         }
+
 </style>

@@ -13,5 +13,6 @@ namespace EntityLayer_HizmetPortal.Concrate
         public int DuyurularId { get; set; }
         [StringLength(500)]
         public string DuyurularImage { get; set; }
+        public bool DuyurularStatus {  get; set; } 
     }
 }

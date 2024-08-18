@@ -37,9 +37,7 @@ namespace HizmetPortal.Controllers
                 string yol = "~/Image/" + dosyaAdi + uzanti;
                 Request.Files[0].SaveAs(Server.MapPath(yol));
                 haberler.HaberImage = "/Image/" + dosyaAdi + uzanti;
-            }
-            
-            // Add hizmetler to database
+            }            
 
             hm.HaberlerAdd(haberler);
             return RedirectToAction("Index");
@@ -55,15 +53,27 @@ namespace HizmetPortal.Controllers
         [HttpPost]
         public ActionResult Edit(Haberler haberler)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAdi = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaAdi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                haberler.HaberImage = "/Image/" + dosyaAdi + uzanti;
+            }
             hm.EditHaberler(haberler);
             return RedirectToAction("Index");
         }
-
-        
+    
         public ActionResult Delete(int id)
         {
             var haberlervalues = hm.GetBuyID(id);
             hm.DeleteHaberler(haberlervalues);
+            return RedirectToAction("Index");
+        }
+        public ActionResult ToggleStatus(int id)
+        {
+            hm.HaberlerToggleStatus(id);
             return RedirectToAction("Index");
         }
     }

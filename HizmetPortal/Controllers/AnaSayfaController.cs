@@ -29,7 +29,7 @@ namespace HizmetPortal.Controllers
             var hizmetlers = hm.HizmetlerGetAll();
             return View(hizmetlers);
         }
-        public ActionResult LessonIndex()
+        public ActionResult DersIndex()
         {
             var lessons = lm.LessonGetAll();
             return View(lessons);

@@ -5,10 +5,8 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
 
-<table class="table table-bordered">
-    <div>
+<table class="table table-bordered">    
     <tr>
         <th>PersonelId</th>
         <th>PersonelIsim</th>
@@ -16,23 +14,37 @@
         <th>PersonelCV</th>
         <th>PersonelUnvan</th>
         <th>PersonelImage</th>
+        <th>LessonStatus</th>
+        <th>LessonStatusButton</th>
         <th>Güncelle</th>
         <th>Sil</th>
-    </tr></div>
+    </tr>
     @foreach (var item in Model)
     {
         <tr>
             <td>@item.PersonelId</td>
             <td>@item.PersonelIsim</td>
             <td>@item.PersonelSoyisim</td>
-            
             <td>
                 @(item.PersonelCV != null ? (item.PersonelCV.Length > 20 ? item.PersonelCV.Substring(0, 20) + "..." : item.PersonelCV) : "Bilgi yok")
             </td>
-
-            
             <td>@item.PersonelUnvan</td>
             <td>@item.PersonelImage</td>
+            <td>@item.PersonelStatus</td>
+            <td>
+                @if (item.PersonelStatus)
+                {
+                    <a href="/AdminPersonel/ToggleStatus/@item.PersonelId" class="btn btn-danger">
+                        Devre Dışı
+                    </a>
+                }
+                else
+                {
+                    <a href="/AdminPersonel/ToggleStatus/@item.PersonelId" class="btn btn-success">
+                        Aktif Et
+                    </a>
+                }
+            </td>
             <td><a href="/AdminPersonel/Edit/@item.PersonelId" class="btn btn-warning">Güncelle</a></td>
             <td><a href="/AdminPersonel/Delete/@item.PersonelId" class="btn btn-danger">Sil</a></td>
         </tr>

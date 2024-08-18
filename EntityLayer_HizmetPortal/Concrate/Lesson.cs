@@ -12,11 +12,9 @@ namespace EntityLayer_HizmetPortal.Concrate
         [Key]
         public int LessonId { get; set; }
         [StringLength(100)]
-        public string LessonName { get; set; }
-        [StringLength(100)]
         public string LessonTitle { get; set; }
         [StringLength(1000)]
-        public string LessonDestcription { get; set; }
+        public string LessonDescription { get; set; }
         [StringLength(200)]
         public string LessonImage { get; set; }
         public bool LessonStatues { get; set; }

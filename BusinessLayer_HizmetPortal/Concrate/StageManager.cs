@@ -39,7 +39,7 @@ namespace BusinessLayer_HizmetPortal.Concrate
             var stage = _stagedal.GetById(id);
             if (stage != null)
             {
-                stage.StageStatues = !stage.StageStatues;
+                stage.StageStatus = !stage.StageStatus;
                 _stagedal.Update(stage);
             }
         }

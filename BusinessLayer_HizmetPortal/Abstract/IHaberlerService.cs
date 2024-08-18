@@ -14,6 +14,7 @@ namespace BusinessLayer_HizmetPortal.Abstract
         Haberler GetBuyID(int id);
         void DeleteHaberler(Haberler haberler);
         void EditHaberler(Haberler haberler);
+        void HaberlerToggleStatus(int id);
     }
 }
 

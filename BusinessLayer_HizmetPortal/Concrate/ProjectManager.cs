@@ -44,7 +44,7 @@ namespace BusinessLayer_HizmetPortal.Concrate
             var project = _projectdal.GetById(id);
             if (project != null)
             {
-                project.ProjectStatues = !project.ProjectStatues;
+                project.ProjectStatus = !project.ProjectStatus;
                 _projectdal.Update(project);
             }
         }

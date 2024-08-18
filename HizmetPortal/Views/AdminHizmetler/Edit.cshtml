@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h1>güncelleme sayfası</h1>
+<h1>Hizmetler Güncelleme Sayfası</h1>
 <br />
-@using (Html.BeginForm("Edit", "AdminHizmetler", FormMethod.Post))
+@using (Html.BeginForm("Edit", "AdminHizmetler", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="form-group">
         @Html.Label("Hizmet Id")
@@ -18,20 +18,16 @@
         @Html.TextBoxFor(x => x.HizmetName, new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.Label("Hizmet Destcription")
-        @Html.TextBoxFor(x => x.HizmetDestcription, new { @class = "form-control" })
+        @Html.Label("Hizmet Description")
+        @Html.TextAreaFor(x => x.HizmetDescription, new { @class = "form-control" })
     </div>
     <div class="form-group">
         @Html.Label("Hizmet Image")
-        @Html.TextBoxFor(x => x.HizmetImage, new { @class = "form-control" })
+        <input type="file" name="HizmetlerImage" class="form-control" />
     </div>
     <div class="form-group">
         @Html.Label("Hizmet Icon")
-        @Html.TextBoxFor(x => x.HizmetIcon, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        @Html.Label("Hizmet Statues")
-        @Html.TextBoxFor(x => x.HizmetStatues, new { @class = "form-control" })
+        <input type="file" name="HizmetIconFile" class="form-control" />
     </div>
     <button type="submit" class="btn btn-success">Güncelle</button>
 }

@@ -4,6 +4,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/UygulamaLayout.cshtml";
 }
+
 <br />
 <br />
 <br />
@@ -14,9 +15,9 @@
             @foreach (var lesson in Model)
             {
                 <div class="col-md-4">
-                    <div class="project-div">
-                        <img src="@lesson.LessonImage" alt="Project Image">
-                       
+                    <div class="lesson-div">
+                        <img src="@lesson.LessonImage" alt="Lesson Image">
+
                         <center>
                             <a href="/Lesson/LessonDetaylarIndex/@lesson.LessonId" style="text-decoration: none;">
                                 <p>@lesson.LessonTitle</p>
@@ -29,8 +30,9 @@
     </div>
 </div>
 
+
 <style>
-    .project-div {
+    .lesson-div {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -40,12 +42,12 @@
         overflow: hidden;
     }
 
-        .project-div img {
+        .lesson-div img {
             width: 100%;
             object-fit: cover;
         }
 
-        .project-div .label {
+        .lesson-div .label {
             position: absolute;
             top: 10px;
             right: 10px;
@@ -56,7 +58,7 @@
             z-index: 1;
         }
 
-        .project-div p {
+        .lesson-div p {
             overflow-wrap: break-word;
             word-break: break-word;
             color: #ffffff;
@@ -66,6 +68,5 @@
             margin: 0;
         }
 </style>
-
 
 

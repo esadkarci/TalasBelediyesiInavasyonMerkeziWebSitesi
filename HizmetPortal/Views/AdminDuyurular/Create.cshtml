@@ -3,18 +3,14 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-<h1>yeni servis ekleme sayfası</h1>
-<br />
 
+<h1>Yeni Duyuru Ekleme Sayfası</h1>
+<br />
 @using (Html.BeginForm("Create", "AdminDuyurular", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="form-group">
-
-
-        @Html.Label("Hizmet Image")
+        @Html.Label("Duyuru Image")
         <input type="file" name="DuyurularImage" />
-
-
         <button type="submit" class="btn btn-primary">Ekle</button>
     </div>
 }

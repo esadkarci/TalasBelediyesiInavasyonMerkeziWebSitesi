@@ -11,18 +11,14 @@ namespace EntityLayer_HizmetPortal.Concrate
     {
         [Key]
         public int HizmetId { get; set; }
-
         [StringLength(100)]
         public string HizmetName { get; set; }
-
         [StringLength(1000)]
-        public string HizmetDestcription { get; set; }
-
+        public string HizmetDescription { get; set; }
         [StringLength(200)]
         public string HizmetImage { get; set; }
-
         [StringLength(200)]
         public string HizmetIcon { get; set; }
-        public bool HizmetStatues { get; set; }
+        public bool HizmetStatus { get; set; }
     }
 }

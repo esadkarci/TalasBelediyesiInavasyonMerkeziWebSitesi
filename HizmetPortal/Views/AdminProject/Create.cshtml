@@ -5,14 +5,13 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h1>Yeni Servis Ekleme Sayfası</h1>
+<h1>Yeni Proje Ekleme Sayfası</h1>
 <br />
 @using (Html.BeginForm("Create", "AdminProject", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <div class="form-group">
-        
+    <div class="form-group"> 
         @Html.Label("Proje Başlığı")
-        @Html.TextAreaFor(x => x.ProjectTitle, new { @class = "form-control" })
+        @Html.TextBoxFor(x => x.ProjectTitle, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.ProjectTitle)
         <br />
         @Html.Label("Proje Açıklaması")
@@ -21,10 +20,6 @@
         <br />
         @Html.Label("Proje Görseli")
         <input type="file" name="ProjectImage" />
-        <br />
-        @Html.Label("Proje Durumu")
-        @Html.TextBoxFor(x => x.ProjectStatues, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.ProjectStatues)
         <br />
         @Html.Label("Aşama Seçiniz")
         <select class="form-control" name="StageId">

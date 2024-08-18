@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/UygulamaLayout.cshtml";
+}
+
+<br />
+<br />
+<br />
+
+<div class="contact-info">
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                </div>
+                <div class="contact-text">
+                    <h3>Adres</h3>
+                    <p>Başak Mahallesi, 5.Etap, 2.Kısım, Abdülhamithan Caddesi, No:5 Başakşehir / İSTANBUL</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fa fa-phone-alt fa-2x"></i>
+                </div>
+                <div class="contact-text">
+                    <h3>Telefon</h3>
+                    <p>Telefon: <strong>444 06 69</strong></p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope fa-2x"></i>
+                </div>
+                <div class="contact-text">
+                    <h3>E-Posta</h3>
+                    <p>info@basaksehir-livinglab.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15246.261103307736!2d35.54355585321363!3d38.69289436195257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152b0d327cdf3423%3A0x6c5ae6ff36903c4f!2sTalas%20Belediyesi%20E-Spor%20Arena%20ve%20%C4%B0novasyon%20Merkezi!5e0!3m2!1str!2str!4v1723977746405!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</div>
+<style>
+    .contact-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        background-color: #002366;
+        padding: 40px;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    .contact-info {
+        width: 100%;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+
+    .contact-icon {
+        font-size: 32px;
+        color: #007bff;
+        margin-right: 15px;
+    }
+
+    .contact-text h3 {
+        margin: 0;
+        font-size: 18px;
+        color: white;
+        text-align: left;
+    }
+
+    .contact-text p {
+        margin: 5px 0 0;
+        color: #ccc;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .contact-text strong {
+        font-weight: bold;
+        color: white;
+    }
+
+    .map-container {
+        width: 55%;
+    }
+</style>

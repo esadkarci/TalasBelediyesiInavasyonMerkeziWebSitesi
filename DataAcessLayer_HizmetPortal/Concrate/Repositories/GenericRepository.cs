@@ -58,10 +58,6 @@ namespace DataAcessLayer_HizmetPortal.Concrate.Repositories
         public T GetById(int id)
         {
             return _object.Find(id);
-        }
-
-
-        
-        
+        }      
     }
 }

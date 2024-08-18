@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h1>Yeni durum ekleme sayfası</h1>
+<h1>Yeni Durum Ekleme Sayfası</h1>
 <br />
 @using (Html.BeginForm("Create", "AdminStage", FormMethod.Post))
 {
@@ -13,10 +13,6 @@
         @Html.Label("Stage adı")
         @Html.TextBoxFor(x => x.StageName, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.StageName)
-        <br />
-        @Html.Label("Statues")
-        @Html.TextAreaFor(x => x.StageStatues, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.StageStatues)
         <br />
         <button type="submit" class="btn btn-primary">Ekle</button>
     </div>

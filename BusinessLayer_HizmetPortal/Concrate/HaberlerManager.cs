@@ -45,5 +45,15 @@ namespace BusinessLayer_HizmetPortal.Concrate
         {
             _haberlerdal.Add(haberler);
         }
+
+        public void HaberlerToggleStatus(int id)
+        {
+            var haberler = _haberlerdal.GetById(id);
+            if (haberler != null)
+            {
+                haberler.HaberlerStatus = !haberler.HaberlerStatus;
+                _haberlerdal.Update(haberler);
+            }
+        }
     }
 }

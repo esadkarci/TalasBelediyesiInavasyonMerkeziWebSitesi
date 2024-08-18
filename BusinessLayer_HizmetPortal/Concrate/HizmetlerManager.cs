@@ -44,7 +44,7 @@ namespace BusinessLayer_HizmetPortal.Concrate
             var hizmet = _hizmetlerdal.GetById(id);
             if (hizmet != null)
             {
-                hizmet.HizmetStatues = !hizmet.HizmetStatues;
+                hizmet.HizmetStatus = !hizmet.HizmetStatus;
                 _hizmetlerdal.Update(hizmet);
             }
         }

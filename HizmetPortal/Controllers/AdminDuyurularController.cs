@@ -40,8 +40,6 @@ namespace HizmetPortal.Controllers
                 duyurular.DuyurularImage = "/Image/" + dosyaAdi + uzanti;
             }
 
-            // Add hizmetler to database
-
             dm.DuyurularAdd(duyurular);
             return RedirectToAction("Index");
         }
@@ -56,6 +54,14 @@ namespace HizmetPortal.Controllers
         [HttpPost]
         public ActionResult Edit(Duyurular duyurular)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAdi = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaAdi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                duyurular.DuyurularImage = "/Image/" + dosyaAdi + uzanti;
+            }
             dm.EditDuyurular(duyurular);
             return RedirectToAction("Index");
         }
@@ -63,6 +69,11 @@ namespace HizmetPortal.Controllers
         {
             var hizmetlervalues = dm.GetBuyID(id);
             dm.DeleteDuyurular(hizmetlervalues);
+            return RedirectToAction("Index");
+        }
+        public ActionResult ToggleStatus(int id)
+        {
+            dm.DuyurularToggleStatus(id);
             return RedirectToAction("Index");
         }
     }

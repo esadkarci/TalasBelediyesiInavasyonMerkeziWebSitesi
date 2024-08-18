@@ -10,11 +10,11 @@
     <tr>
         <th>HizmetId</th>
         <th>HizmetName</th>
-        <th>HizmetDestcription</th>
+        <th>HizmetDescription</th>
         <th>HizmetImage</th>
         <th>HizmetIcon</th>
-        <th>HizmetStatues</th>
-        <th>DevreDışı</th>
+        <th>HizmetStatus</th>
+        <th>HizmetStatusButton</th>
         <th>Güncelle</th>
         <th>Sil</th>
     </tr>
@@ -23,15 +23,30 @@
         <tr>
             <td>@item.HizmetId</td>
             <td>@item.HizmetName</td>
-            <td>@item.HizmetDestcription</td>
+            <td>
+                @(item.HizmetDescription != null ? (item.HizmetDescription.Length > 20 ? item.HizmetDescription.Substring(0, 20) + "..." : item.HizmetDescription) : "Bilgi yok")
+            </td>
             <td>@item.HizmetImage</td>
             <td>@item.HizmetIcon</td>
-            <td>@item.HizmetStatues</td>
-            <td><a href="/AdminHizmetler/ToggleStatus/@item.HizmetId" class="btn btn-danger">DevreDışı</a></td>
+            <td>@item.HizmetStatus</td>
+            <td>
+                @if (item.HizmetStatus)
+                {
+                    <a href="/AdminHizmetler/ToggleStatus/@item.HizmetId" class="btn btn-danger">
+                        Devre Dışı
+                    </a>
+                }
+                else
+                {
+                    <a href="/AdminHizmetler/ToggleStatus/@item.HizmetId" class="btn btn-success">
+                        Aktif Et
+                    </a>
+                }
+            </td>
             <td><a href="/AdminHizmetler/Edit/@item.HizmetId" class="btn btn-warning">Güncelle</a></td>
             <td><a href="/AdminHizmetler/Delete/@item.HizmetId" class="btn btn-danger">Sil</a></td>
         </tr>
     }
 </table>
 <br />
-<a href="/AdminHizmetler/Create" class="btn btn-info">yeni kategori</a>
+<a href="/AdminHizmetler/Create" class="btn btn-info">Yeni Hizmet</a>

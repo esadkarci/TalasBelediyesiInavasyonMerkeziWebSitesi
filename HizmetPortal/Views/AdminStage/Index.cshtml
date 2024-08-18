@@ -12,8 +12,8 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Statues</th>
-        <th>DevreDışı</th>
+        <th>Status</th>
+        <th>StatusButton</th>
         <th>Güncelle</th>
     </tr>
     @foreach (var item in Model)
@@ -21,8 +21,21 @@
         <tr>
             <td>@item.StageId</td>
             <td>@item.StageName</td>
-            <td>@item.StageStatues</td>
-            <td><a href="/AdminStage/ToggleStatus/@item.StageId" class="btn btn-danger">DevreDışı</a></td>
+            <td>@item.StageStatus</td>
+            <td>
+                @if (item.StageStatus)
+                {
+                    <a href="/AdminStage/ToggleStatus/@item.StageId" class="btn btn-danger">
+                        Devre Dışı
+                    </a>
+                }
+                else
+                {
+                    <a href="/AdminStage/ToggleStatus/@item.StageId" class="btn btn-success">
+                        Aktif Et
+                    </a>
+                }
+            </td>
             <td><a href="/AdminStage/Edit/@item.StageId" class="btn btn-warning">Güncelle</a></td>
         </tr>
     }

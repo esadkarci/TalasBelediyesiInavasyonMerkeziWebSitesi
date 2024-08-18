@@ -39,6 +39,16 @@ namespace BusinessLayer_HizmetPortal.Concrate
             return _personelDal.Get(x => x.PersonelId == id);
         }
 
+        public void PersonelToggleStatus(int id)
+        {
+            var personel = _personelDal.GetById(id);
+            if (personel != null)
+            {
+                personel.PersonelStatus = !personel.PersonelStatus;
+                _personelDal.Update(personel);
+            }
+        }
+
         public void PersonelUpdate(Personel personel)
         {
             _personelDal.Update(personel);
