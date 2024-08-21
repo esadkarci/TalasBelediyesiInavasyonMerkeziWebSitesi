@@ -767,3 +767,7 @@
     font-size: 2.0rem;
     margin: 0;
 }
+.nav-item .nav-link.active {
+    color: #007bff; 
+    background-color: rgba(0, 123, 255, 0.1);
+}

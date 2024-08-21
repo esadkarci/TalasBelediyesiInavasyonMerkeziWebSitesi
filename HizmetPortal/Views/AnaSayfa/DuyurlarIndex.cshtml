@@ -6,90 +6,152 @@
 }
 
 
-<div class="header-carousel owl-carousel">
-    @foreach (var item in Model)
-    {
-        <div class="header-carousel-item">
-            <div class="carousel-caption">
-                <div class="carousel-img">
-                    <img src="@item.DuyurularImage" class="img-fluid w-100 h-100" alt="Duyuru Image">
+@*<div class="header-carousel owl-carousel">
+        @foreach (var item in Model)
+        {
+            <div class="header-carousel-item">
+                <div class="carousel-caption">
+                    <div class="carousel-img">
+                        <img src="@item.DuyurularImage" class="img-fluid w-100 h-100" alt="Duyuru Image">
+                    </div>
                 </div>
             </div>
-        </div>
-    }
-</div>
+        }
+    </div>
 
 
-<style>
-    .header-carousel .header-carousel-item {
-        height: 650px;
-        background-color: white;
-    }
-
-    .header-carousel .carousel-img {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-        .header-carousel .carousel-img img {
-            object-fit: contain;
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            transition: transform 0.5s ease;
+    <style>
+        .header-carousel .header-carousel-item {
+            height: 650px;
+            background-color: white;
         }
 
-            .header-carousel .carousel-img img:hover {
-                transform: scale(1.1);
+        .header-carousel .carousel-img {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .header-carousel .carousel-img img {
+                object-fit: contain;
+                max-width: 100%;
+                max-height: 100%;
+                width: auto;
+                height: auto;
+                transition: transform 0.5s ease;
             }
 
-    .header-carousel .owl-nav .owl-prev,
-    .header-carousel .owl-nav .owl-next {
-        position: absolute;
-        width: 60px;
-        height: 60px;
-        border-radius: 60px;
-        background: var(--bs-light);
-        color: var(--bs-primary);
-        font-size: 26px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.5s;
-    }
+                .header-carousel .carousel-img img:hover {
+                    transform: scale(1.1);
+                }
 
-    .header-carousel .owl-nav .owl-prev {
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-left: 30px;
-    }
-
-    .header-carousel .owl-nav .owl-next {
-        bottom: 30px;
-        right: 50%;
-        transform: translateX(-50%);
-        margin-right: 30px;
-    }
-
-        .header-carousel .owl-nav .owl-prev:hover,
-        .header-carousel .owl-nav .owl-next:hover {
-            box-shadow: inset 0 0 100px 0 var(--bs-secondary);
-            color: var(--bs-white);
+        .header-carousel .owl-nav .owl-prev,
+        .header-carousel .owl-nav .owl-next {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 60px;
+            background: var(--bs-light);
+            color: var(--bs-primary);
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.5s;
         }
 
-    .header-carousel .header-carousel-item .carousel-caption {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-    }
-</style>
+        .header-carousel .owl-nav .owl-prev {
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-left: 30px;
+        }
+
+        .header-carousel .owl-nav .owl-next {
+            bottom: 30px;
+            right: 50%;
+            transform: translateX(-50%);
+            margin-right: 30px;
+        }
+
+            .header-carousel .owl-nav .owl-prev:hover,
+            .header-carousel .owl-nav .owl-next:hover {
+                box-shadow: inset 0 0 100px 0 var(--bs-secondary);
+                color: var(--bs-white);
+            }
+
+        .header-carousel .header-carousel-item .carousel-caption {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+        }
+    </style>*@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Announcement Swiper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />-->
+    <!-- Link Swiper's CSS -->
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />-->
+
+    <!-- Scoped styles for the announcement area -->
+    <!--<style>
+        .announcement-swiper-container {
+            position: relative;
+            height: 100%;
+        }
+
+            .announcement-swiper-container .swiper {
+                width: 100%;
+                height: 100%;
+            }
+
+            .announcement-swiper-container .swiper-slide {
+                text-align: center;
+                font-size: 18px;
+                background: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+            }
+
+                .announcement-swiper-container .swiper-slide img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+    </style>
+</head>
+<body>-->
+    <!-- Announcement Swiper -->
+    <!--<div class="announcement-swiper-container">
+        <div class="swiper announcementSwiper">
+            <div class="swiper-wrapper">
+                @foreach (var image in Model)
+                {
+                    <div class="swiper-slide">
+                        <img src="@image.DuyurularImage" alt="Slide Image" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>-->
+
+    <!-- Swiper JS -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>-->
+
+    <!-- Initialize Swiper -->
+    <!--<script>
+        var announcementSwiper = new Swiper(".announcementSwiper", {});
+    </script>
+</body>
+</html>-->

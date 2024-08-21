@@ -151,6 +151,8 @@
     <Compile Include="Controllers\AdminProjectController.cs" />
     <Compile Include="Controllers\AdminStageController.cs" />
     <Compile Include="Controllers\AnaSayfaController.cs" />
+    <Compile Include="Controllers\DersController.cs" />
+    <Compile Include="Controllers\DuyuruController.cs" />
     <Compile Include="Controllers\HaberlerController.cs" />
     <Compile Include="Controllers\HakkımızdaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -182,9 +184,12 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Css\Duyuru.css" />
+    <Content Include="Css\StyleSheet1.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Js\Duyuru.js" />
     <Content Include="LifeSure-1.0.057\LifeSure-1.0.0\404.html" />
     <Content Include="LifeSure-1.0.057\LifeSure-1.0.0\about.html" />
     <Content Include="LifeSure-1.0.057\LifeSure-1.0.0\blog.html" />
@@ -2289,6 +2294,10 @@
     <Content Include="Views\Iletisim\Index.cshtml" />
     <Content Include="Views\Hakkımızda\Index.cshtml" />
     <Content Include="Views\Page404\Page404.cshtml" />
+    <Content Include="Views\Duyuru\Index.cshtml" />
+    <Content Include="Views\Ders\Index.cshtml" />
+    <Content Include="Views\Shared\AdminLayout2.cshtml" />
+    <Content Include="Views\Deneme\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

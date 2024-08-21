@@ -1,0 +1,131 @@
+﻿@using EntityLayer_HizmetPortal.Concrate
+@model List<Duyurular>
+
+@{
+    Layout = null;
+}
+
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Duyuru Custom Swiper Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />-->
+<!-- Link Swiper's CSS -->
+<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />-->
+<!-- Custom styles -->
+<!--<style>
+
+        /* Sadece bu sayfada uygulanacak genel kapsayıcı */
+        .duyuruCustom-wrapper {
+            width: 100%;
+            height: 850px !important; /* Özgül yüksekliği zorlamak için !important */
+            margin: 0 auto;
+            position: relative;
+            background-color: #f7f7f7;
+        }
+
+        .duyuruCustom-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .duyuruCustom-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+            .duyuruCustom-slide img {
+                display: block;
+                width: 100% !important; /* Özgül genişliği zorlamak için !important */
+                height: 850px !important; /* Özgül yüksekliği zorlamak için !important */
+                /*object-fit: cover;*/ /* Resmin container'ı kaplamasını sağlar */
+            }
+    </style>
+</head>
+
+<body>-->
+<!-- Swiper -->
+<!--<div class="duyuruCustom-wrapper">
+    <div class="swiper duyuruCustom-container">
+        <div class="swiper-wrapper">
+            @foreach (var image in Model)
+            {
+                <div class="swiper-slide duyuruCustom-slide">
+                    <img src="@image.DuyurularImage" alt="Slide Image" />
+                </div>
+            }
+        </div>
+    </div>
+</div>-->
+<!-- Swiper JS -->
+<!--<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>-->
+<!-- Initialize Swiper -->
+<!--<script>
+        var swiper = new Swiper(".duyuruCustom-container", {
+            // İhtiyaca göre Swiper ayarları eklenebilir
+        });
+    </script>
+</body>
+
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Duyuru Custom Swiper Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Demo styles -->
+    <link rel="stylesheet" href="~/Css/Duyuru.css" />
+
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="duyuruCustom-wrapper">
+        <div class="swiper duyuruCustom-container">
+            <div class="swiper-wrapper">
+                @foreach (var image in Model)
+                {
+                    <div class="swiper-slide duyuruCustom-slide">
+                        <img src="@image.DuyurularImage" alt="Slide Image" />
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".duyuruCustom-container", {
+            pagination: {
+                el: ".swiper-pagination",
+                type: "progressbar",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+</body>
+
+</html>

@@ -4,50 +4,52 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-<table class="table table-bordered">
-    <tr>
-        <th>HaberId</th>
-        <th>HaberTitle</th>
-        <th>HaberDescription</th>
-        <th>HaberlerImage</th>
-        <th>HaberlerDate</th>
-        <th>HaberlerStatus</th>
-        <th>HaberlerStatusButton</th>
-        <th>Güncelle</th>
-        <th>Sil</th>
-    </tr>
-    @foreach (var item in Model)
-    {
+<div style="overflow-x:auto;">
+    <table class="table table-bordered">
         <tr>
-            <td>@item.HaberId</td>
-            <td>
-                @(item.HaberTitle != null ? (item.HaberTitle.Length > 10 ? item.HaberTitle.Substring(0, 10) + "..." : item.HaberTitle) : "Bilgi yok")
-            </td>
-            <td>
-                @(item.HaberDescription != null ? (item.HaberDescription.Length > 20 ? item.HaberDescription.Substring(0, 20) + "..." : item.HaberDescription) : "Bilgi yok")
-            </td>
-            <td>@item.HaberImage</td>
-            <td>@item.HaberDate</td>
-            <td>@item.HaberlerStatus</td>
-            <td>
-                @if (item.HaberlerStatus)
-                {
-                    <a href="/AdminHaberler/ToggleStatus/@item.HaberId" class="btn btn-danger">
-                        Devre Dışı
-                    </a>
-                }
-                else
-                {
-                    <a href="/AdminHaberler/ToggleStatus/@item.HaberId" class="btn btn-success">
-                        Aktif Et
-                    </a>
-                }
-            </td>
-            <td><a href="/AdminHaberler/Edit/@item.HaberId" class="btn btn-warning">Güncelle</a></td>
-            <td><a href="/AdminHaberler/Delete/@item.HaberId" class="btn btn-danger">Sil</a></td>
+            <th>HaberId</th>
+            <th>HaberTitle</th>
+            <th>HaberDescription</th>
+            <th>HaberlerImage</th>
+            <th>HaberlerDate</th>
+            <th>HaberlerStatus</th>
+            <th>HaberlerStatusButton</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
         </tr>
-    }
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.HaberId</td>
+                <td>
+                    @(item.HaberTitle != null ? (item.HaberTitle.Length > 10 ? item.HaberTitle.Substring(0, 10) + "..." : item.HaberTitle) : "Bilgi yok")
+                </td>
+                <td>
+                    @(item.HaberDescription != null ? (item.HaberDescription.Length > 20 ? item.HaberDescription.Substring(0, 20) + "..." : item.HaberDescription) : "Bilgi yok")
+                </td>
+                <td>@item.HaberImage</td>
+                <td>@item.HaberDate</td>
+                <td>@item.HaberlerStatus</td>
+                <td>
+                    @if (item.HaberlerStatus)
+                    {
+                        <a href="/AdminHaberler/ToggleStatus/@item.HaberId" class="btn btn-danger">
+                            Devre Dışı
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/AdminHaberler/ToggleStatus/@item.HaberId" class="btn btn-success">
+                            Aktif Et
+                        </a>
+                    }
+                </td>
+                <td><a href="/AdminHaberler/Edit/@item.HaberId" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/AdminHaberler/Delete/@item.HaberId" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </table>
+</div>
 <br />
 <a href="/AdminHaberler/Create" class="btn btn-info">yeni haber</a>
 

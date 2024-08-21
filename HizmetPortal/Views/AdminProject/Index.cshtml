@@ -1,53 +1,56 @@
 ﻿@using EntityLayer_HizmetPortal.Concrate
-@model List<Project> 
+@model List<Project>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<table class="table table-bordered">
-    <tr>
-        <th>ProjectId</th>
-        <th>ProjectTitle</th>
-        <th>ProjectDescription</th>
-        <th>ProjectImage</th>
-        <th>StageId</th>
-        <th>ProjectStatus</th>
-        <th>ProjectStatusButton</th>
-        <th>Güncelle</th>
-        <th>Sil</th>
-    </tr>
-    @foreach (var item in Model)
-    {
+<div style="overflow-x:auto;">
+    <!-- Bu satır tabloyu sarmalayan div'in başlangıcı -->
+    <table class="table table-bordered">
         <tr>
-            <td>@item.ProjectId</td>
-            <td>
-                @(item.ProjectTitle != null ? (item.ProjectTitle.Length > 10 ? item.ProjectTitle.Substring(0, 10) + "..." : item.ProjectTitle) : "Bilgi yok")
-            </td>
-            <td>
-                @(item.ProjectDescription != null ? (item.ProjectDescription.Length > 20 ? item.ProjectDescription.Substring(0, 20) + "..." : item.ProjectDescription) : "Bilgi yok")
-            </td>
-            <td>@item.ProjectImage</td>
-            <td>@item.StageId</td>
-            <td>@item.ProjectStatus</td>
-            <td>
-                @if (item.ProjectStatus)
-                {
-                    <a href="/AdminProject/ToggleStatus/@item.ProjectId" class="btn btn-danger">
-                        Devre Dışı
-                    </a>
-                }
-                else
-                {
-                    <a href="/AdminProject/ToggleStatus/@item.ProjectId" class="btn btn-success">
-                        Aktif Et
-                    </a>
-                }
-            </td>
-            <td><a href="/AdminProject/Edit/@item.ProjectId" class="btn btn-warning">Güncelle</a></td>
-            <td><a href="/AdminProject/Delete/@item.ProjectId" class="btn btn-danger">Sil</a></td>
+            <th>ProjectId</th>
+            <th>ProjectTitle</th>
+            <th>ProjectDescription</th>
+            <th>ProjectImage</th>
+            <th>StageId</th>
+            <th>ProjectStatus</th>
+            <th>ProjectStatusButton</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
         </tr>
-    }
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProjectId</td>
+                <td>
+                    @(item.ProjectTitle != null ? (item.ProjectTitle.Length > 10 ? item.ProjectTitle.Substring(0, 10) + "..." : item.ProjectTitle) : "Bilgi yok")
+                </td>
+                <td>
+                    @(item.ProjectDescription != null ? (item.ProjectDescription.Length > 20 ? item.ProjectDescription.Substring(0, 20) + "..." : item.ProjectDescription) : "Bilgi yok")
+                </td>
+                <td>@item.ProjectImage</td>
+                <td>@item.StageId</td>
+                <td>@item.ProjectStatus</td>
+                <td>
+                    @if (item.ProjectStatus)
+                    {
+                        <a href="/AdminProject/ToggleStatus/@item.ProjectId" class="btn btn-danger">
+                            Devre Dışı
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/AdminProject/ToggleStatus/@item.ProjectId" class="btn btn-success">
+                            Aktif Et
+                        </a>
+                    }
+                </td>
+                <td><a href="/AdminProject/Edit/@item.ProjectId" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/AdminProject/Delete/@item.ProjectId" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </table>
+</div> <!-- Bu satır tabloyu sarmalayan div'in sonu -->
 <br />
-<a href="/AdminProject/Create" class="btn btn-info">yeni proje</a>
+<a href="/AdminProject/Create" class="btn btn-info">Yeni Proje</a>

@@ -4,24 +4,34 @@
     Layout = "~/Views/Shared/UygulamaLayout.cshtml";
 }
 
-
+<br />
+<br />
+<br />
 <div class="duyurular-section">
-    @Html.Action("DuyurlarIndex", "AnaSayfa")
+    @Html.Action("Index", "Duyuru")
 </div>
+
+@*<div class="duyurular-section">
+    @Html.Action("DuyurlarIndex", "AnaSayfa")
+</div>*@
 
 <div class="hizmetler-section">
     @Html.Action("HizmetlerIndex", "AnaSayfa")
 </div>
 
 <div class="hizmetler-section">
-    @Html.Action("DersIndex", "AnaSayfa")
+    @Html.Action("Index", "Ders")
 </div>
 
+@*<div class="hizmetler-section">
+    @Html.Action("DersIndex", "AnaSayfa")
+</div>*@
+
 <br />
 <br />
 <br />
 
-<footer>
+@*<footer>
     <p>&copy; 2024 TALAS BELEDİYESİ. Tüm hakları saklıdır.</p>
 </footer>
 <style>
@@ -35,4 +45,4 @@
         bottom: 0;
         width: 100%;
     }
-</style>
+</style>*@

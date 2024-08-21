@@ -10,6 +10,36 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@media (max-width: 768px) {
+    #wrapper {
+        flex-direction: column;
+    }
+
+    #accordionSidebar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: auto;
+        z-index: 1000;
+        background-color: #4e73df;
+        overflow-y: auto;
+        display: none;
+    }
+
+        #accordionSidebar.show {
+            display: block;
+        }
+
+    #content-wrapper {
+        margin-top: 0;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
 :root {
   --blue: #4e73df;
   --indigo: #6610f2;

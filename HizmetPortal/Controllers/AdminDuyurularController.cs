@@ -63,8 +63,8 @@ namespace HizmetPortal.Controllers
         public ActionResult Edit(int id)
         {
 
-            var hizmetlervalue = dm.GetBuyID(id);
-            return View(hizmetlervalue);
+            var duyurularvalue = dm.GetBuyID(id);
+            return View(duyurularvalue);
         }
 
         [HttpPost]

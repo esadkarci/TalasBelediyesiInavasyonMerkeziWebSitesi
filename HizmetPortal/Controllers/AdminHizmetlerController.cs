@@ -38,7 +38,7 @@ namespace HizmetPortal.Controllers
 
             if (results.IsValid)
             {
-                if (Request.Files.Count > 0)
+                if (Request.Files.Count > 0 && Request.Files[0] != null)
                 {
                     string dosyaAdi = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
                     string uzanti = Path.GetExtension(Request.Files[0].FileName);
@@ -47,10 +47,10 @@ namespace HizmetPortal.Controllers
                     hizmetler.HizmetImage = "/Image/" + dosyaAdi + uzanti;
                 }
 
-                if (Request.Files.Count > 0 && Request.Files["HizmetIconFile"] != null)
+                if (Request.Files.Count > 1 && Request.Files["HizmetIconFile"] != null)
                 {
-                    string iconFileName = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
-                    string iconExtension = Path.GetExtension(Request.Files[0].FileName);
+                    string iconFileName = Path.GetFileNameWithoutExtension(Request.Files["HizmetIconFile"].FileName);
+                    string iconExtension = Path.GetExtension(Request.Files["HizmetIconFile"].FileName);
                     string iconPath = "~/Icon/" + iconFileName + iconExtension;
                     Request.Files["HizmetIconFile"].SaveAs(Server.MapPath(iconPath));
                     hizmetler.HizmetIcon = "/Icon/" + iconFileName + iconExtension;
@@ -66,8 +66,9 @@ namespace HizmetPortal.Controllers
                     ModelState.AddModelError(failure.PropertyName, failure.ErrorMessage);
                 }
                 return View(hizmetler);
-            }               
+            }
         }
+
 
         [HttpGet]
         public ActionResult Edit(int id)

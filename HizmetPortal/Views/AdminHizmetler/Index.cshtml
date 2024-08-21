@@ -6,47 +6,52 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<table class="table table-bordered">
-    <tr>
-        <th>HizmetId</th>
-        <th>HizmetName</th>
-        <th>HizmetDescription</th>
-        <th>HizmetImage</th>
-        <th>HizmetIcon</th>
-        <th>HizmetStatus</th>
-        <th>HizmetStatusButton</th>
-        <th>Güncelle</th>
-        <th>Sil</th>
-    </tr>
-    @foreach (var item in Model)
-    {
+<div style="overflow-x:auto;">
+    <!-- Bu satır tabloyu sarmalayan div'in başlangıcı -->
+    <table class="table table-bordered">
         <tr>
-            <td>@item.HizmetId</td>
-            <td>@item.HizmetName</td>
-            <td>
-                @(item.HizmetDescription != null ? (item.HizmetDescription.Length > 20 ? item.HizmetDescription.Substring(0, 20) + "..." : item.HizmetDescription) : "Bilgi yok")
-            </td>
-            <td>@item.HizmetImage</td>
-            <td>@item.HizmetIcon</td>
-            <td>@item.HizmetStatus</td>
-            <td>
-                @if (item.HizmetStatus)
-                {
-                    <a href="/AdminHizmetler/ToggleStatus/@item.HizmetId" class="btn btn-danger">
-                        Devre Dışı
-                    </a>
-                }
-                else
-                {
-                    <a href="/AdminHizmetler/ToggleStatus/@item.HizmetId" class="btn btn-success">
-                        Aktif Et
-                    </a>
-                }
-            </td>
-            <td><a href="/AdminHizmetler/Edit/@item.HizmetId" class="btn btn-warning">Güncelle</a></td>
-            <td><a href="/AdminHizmetler/Delete/@item.HizmetId" class="btn btn-danger">Sil</a></td>
+            <th>HizmetId</th>
+            <th>HizmetName</th>
+            <th>HizmetDescription</th>
+            <th>HizmetImage</th>
+            <th>HizmetIcon</th>
+            <th>HizmetStatus</th>
+            <th>HizmetStatusButton</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
         </tr>
-    }
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.HizmetId</td>
+                <td>
+                    @(item.HizmetName != null ? (item.HizmetDescription.Length > 10 ? item.HizmetDescription.Substring(0, 10) + "..." : item.HizmetName) : "Bilgi yok")
+                </td>
+                <td>
+                    @(item.HizmetDescription != null ? (item.HizmetDescription.Length > 20 ? item.HizmetDescription.Substring(0, 20) + "..." : item.HizmetDescription) : "Bilgi yok")
+                </td>
+                <td>@item.HizmetImage</td>
+                <td>@item.HizmetIcon</td>
+                <td>@item.HizmetStatus</td>
+                <td>
+                    @if (item.HizmetStatus)
+                    {
+                        <a href="/AdminHizmetler/ToggleStatus/@item.HizmetId" class="btn btn-danger">
+                            Devre Dışı
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/AdminHizmetler/ToggleStatus/@item.HizmetId" class="btn btn-success">
+                            Aktif Et
+                        </a>
+                    }
+                </td>
+                <td><a href="/AdminHizmetler/Edit/@item.HizmetId" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/AdminHizmetler/Delete/@item.HizmetId" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </table>
+</div> <!-- Bu satır tabloyu sarmalayan div'in sonu -->
 <br />
 <a href="/AdminHizmetler/Create" class="btn btn-info">Yeni Hizmet</a>

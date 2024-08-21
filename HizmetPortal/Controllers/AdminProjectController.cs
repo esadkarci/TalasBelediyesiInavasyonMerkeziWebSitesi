@@ -62,7 +62,6 @@ namespace HizmetPortal.Controllers
                 return View(project);
             }         
         }
-
         [HttpGet]
         public ActionResult Edit(int id)
         {
@@ -74,6 +73,14 @@ namespace HizmetPortal.Controllers
         [HttpPost]
         public ActionResult Edit(Project project)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAdi = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaAdi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                project.ProjectImage = "/Image/" + dosyaAdi + uzanti;
+            }
             pm.ProjectUpdate(project);
             return RedirectToAction("Index");
         }

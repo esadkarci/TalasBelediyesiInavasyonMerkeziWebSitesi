@@ -1,4 +1,4 @@
-﻿@using EntityLayer_HizmetPortal.Concrate 
+﻿@using EntityLayer_HizmetPortal.Concrate
 @model List<Duyurular>
 
 @{
@@ -6,42 +6,45 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<table class="table table-bordered">
-    <tr>
-        <th>DuyurularId</th>
-        <th>DuyurularImage</th>
-        <th>DuyurlarStatus</th>
-        <th>DurularStatusButton</th>
-        <th>Güncelle</th>
-        <th>Sil</th>
-    </tr>
-    @foreach (var item in Model)
-    {
+<div style="overflow-x:auto;">
+    <table class="table table-bordered">
         <tr>
-            <td>@item.DuyurularId</td>
-            <td>@item.DuyurularImage</td>
-            <td>@item.DuyurularStatus</td>
-            <td>
-                @if (item.DuyurularStatus)
-                {
-                    <a href="/AdminDuyurular/ToggleStatus/@item.DuyurularId" class="btn btn-danger">
-                        Devre Dışı
-                    </a>
-                }
-                else
-                {
-                    <a href="/AdminDuyurular/ToggleStatus/@item.DuyurularId" class="btn btn-success">
-                        Aktif Et
-                    </a>
-                }
-            </td>
-            <td><a href="/AdminDuyurular/Edit/@item.DuyurularId" class="btn btn-warning">Güncelle</a></td>
-            <td><a href="/AdminDuyurular/Delete/@item.DuyurularId" class="btn btn-danger">Sil</a></td>
+            <th>DuyurularId</th>
+            <th>DuyurularImage</th>
+            <th>DuyurlarStatus</th>
+            <th>DurularStatusButton</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
         </tr>
-    }
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DuyurularId</td>
+                <td>@item.DuyurularImage</td>
+                <td>@item.DuyurularStatus</td>
+                <td>
+                    @if (item.DuyurularStatus)
+                    {
+                        <a href="/AdminDuyurular/ToggleStatus/@item.DuyurularId" class="btn btn-danger">
+                            Devre Dışı
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/AdminDuyurular/ToggleStatus/@item.DuyurularId" class="btn btn-success">
+                            Aktif Et
+                        </a>
+                    }
+                </td>
+                <td><a href="/AdminDuyurular/Edit/@item.DuyurularId" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/AdminDuyurular/Delete/@item.DuyurularId" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </table>
+</div>
 <br />
 <a href="/AdminDuyurular/Create" class="btn btn-info">Yeni Duyuru</a>
+
 
 
 

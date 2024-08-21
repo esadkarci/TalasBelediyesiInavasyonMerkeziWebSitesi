@@ -6,47 +6,50 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<table class="table table-bordered">
-    <tr>
-        <th>LessonId</th>
-        <th>LessonTitle</th>
-        <th>LessonDescription</th>
-        <th>LessonImage</th>
-        <th>LessonStatus</th>
-        <th>LessonStatusButton</th>
-        <th>Güncelle</th>
-        <th>Sil</th>
-    </tr>
-    @foreach (var item in Model)
-    {
+<div style="overflow-x:auto;">
+    <!-- Bu satır tabloyu sarmalayan div'in başlangıcı -->
+    <table class="table table-bordered">
         <tr>
-            <td>@item.LessonId</td>
-            <td>
-                @(item.LessonTitle != null ? (item.LessonTitle.Length > 10 ? item.LessonTitle.Substring(0, 10) + "..." : item.LessonTitle) : "Bilgi yok")
-            </td>
-            <td>
-                @(item.LessonDescription != null ? (item.LessonDescription.Length > 20 ? item.LessonDescription.Substring(0, 20) + "..." : item.LessonDescription) : "Bilgi yok")
-            </td>
-            <td>@item.LessonImage</td>
-            <td>@item.LessonStatues</td>            
-            <td>
-                @if (item.LessonStatues)
-                {
-                    <a href="/AdminLesson/ToggleStatus/@item.LessonId" class="btn btn-danger">
-                        Devre Dışı
-                    </a>
-                }
-                else
-                {
-                    <a href="/AdminLesson/ToggleStatus/@item.LessonId" class="btn btn-success">
-                        Aktif Et
-                    </a>
-                }
-            </td>
-            <td><a href="/AdminLesson/Edit/@item.LessonId" class="btn btn-warning">Güncelle</a></td>
-            <td><a href="/AdminLesson/Delete/@item.LessonId" class="btn btn-danger">Sil</a></td>
+            <th>LessonId</th>
+            <th>LessonTitle</th>
+            <th>LessonDescription</th>
+            <th>LessonImage</th>
+            <th>LessonStatus</th>
+            <th>LessonStatusButton</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
         </tr>
-    }
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.LessonId</td>
+                <td>
+                    @(item.LessonTitle != null ? (item.LessonTitle.Length > 10 ? item.LessonTitle.Substring(0, 10) + "..." : item.LessonTitle) : "Bilgi yok")
+                </td>
+                <td>
+                    @(item.LessonDescription != null ? (item.LessonDescription.Length > 20 ? item.LessonDescription.Substring(0, 20) + "..." : item.LessonDescription) : "Bilgi yok")
+                </td>
+                <td>@item.LessonImage</td>
+                <td>@item.LessonStatues</td>
+                <td>
+                    @if (item.LessonStatues)
+                    {
+                        <a href="/AdminLesson/ToggleStatus/@item.LessonId" class="btn btn-danger">
+                            Devre Dışı
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/AdminLesson/ToggleStatus/@item.LessonId" class="btn btn-success">
+                            Aktif Et
+                        </a>
+                    }
+                </td>
+                <td><a href="/AdminLesson/Edit/@item.LessonId" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/AdminLesson/Delete/@item.LessonId" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </table>
+</div> <!-- Bu satır tabloyu sarmalayan div'in sonu -->
 <br />
-<a href="/AdminLesson/Create" class="btn btn-info">yeni ders</a>
+<a href="/AdminLesson/Create" class="btn btn-info">Yeni Ders</a>

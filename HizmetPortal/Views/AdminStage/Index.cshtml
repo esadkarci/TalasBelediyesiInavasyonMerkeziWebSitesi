@@ -8,37 +8,40 @@
 }
 
 
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Status</th>
-        <th>StatusButton</th>
-        <th>Güncelle</th>
-    </tr>
-    @foreach (var item in Model)
-    {
+<div style="overflow-x:auto;">
+    <!-- Bu satır tabloyu sarmalayan div'in başlangıcı -->
+    <table class="table table-bordered">
         <tr>
-            <td>@item.StageId</td>
-            <td>@item.StageName</td>
-            <td>@item.StageStatus</td>
-            <td>
-                @if (item.StageStatus)
-                {
-                    <a href="/AdminStage/ToggleStatus/@item.StageId" class="btn btn-danger">
-                        Devre Dışı
-                    </a>
-                }
-                else
-                {
-                    <a href="/AdminStage/ToggleStatus/@item.StageId" class="btn btn-success">
-                        Aktif Et
-                    </a>
-                }
-            </td>
-            <td><a href="/AdminStage/Edit/@item.StageId" class="btn btn-warning">Güncelle</a></td>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>StatusButton</th>
+            <th>Güncelle</th>
         </tr>
-    }
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StageId</td>
+                <td>@item.StageName</td>
+                <td>@item.StageStatus</td>
+                <td>
+                    @if (item.StageStatus)
+                    {
+                        <a href="/AdminStage/ToggleStatus/@item.StageId" class="btn btn-danger">
+                            Devre Dışı
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/AdminStage/ToggleStatus/@item.StageId" class="btn btn-success">
+                            Aktif Et
+                        </a>
+                    }
+                </td>
+                <td><a href="/AdminStage/Edit/@item.StageId" class="btn btn-warning">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+</div> <!-- Bu satır tabloyu sarmalayan div'in sonu -->
 <br />
-<a href="/AdminStage/Create" class="btn btn-info">yeni stage</a>
+<a href="/AdminStage/Create" class="btn btn-info">Yeni Stage</a>
