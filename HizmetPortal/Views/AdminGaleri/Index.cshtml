@@ -1,0 +1,45 @@
+﻿@using EntityLayer_HizmetPortal.Concrate
+@model List<Galeri>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div style="overflow-x:auto;">
+    <table class="table table-bordered">
+        <tr>
+            <th>GaleriId</th>
+            <th>GaleriImage</th>
+            <th>GaleriStatus</th>
+            <th>GaleriStatusButton</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.GaleriId</td>
+                <td>@item.GaleriImage</td>
+                <td>@item.GaleriStatus</td>
+                <td>
+                    @if (item.GaleriStatus)
+                    {
+                        <a href="/AdminGaleri/ToggleStatus/@item.GaleriId" class="btn btn-danger">
+                            Devre Dışı
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/AdminGaleri/ToggleStatus/@item.GaleriId" class="btn btn-success">
+                            Aktif Et
+                        </a>
+                    }
+                </td>
+                <td><a href="/AdminGaleri/Edit/@item.GaleriId" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/AdminGaleri/Delete/@item.GaleriId" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </table>
+</div>
+<br />
+<a href="/AdminGaleri/Create" class="btn btn-info">Yeni Resim</a>

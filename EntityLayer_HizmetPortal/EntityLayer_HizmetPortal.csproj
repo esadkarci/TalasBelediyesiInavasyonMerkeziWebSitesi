@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Concrate\Admin.cs" />
     <Compile Include="Concrate\Duyurular.cs" />
+    <Compile Include="Concrate\Galeri.cs" />
     <Compile Include="Concrate\Haberler.cs" />
     <Compile Include="Concrate\Hizmetler.cs" />
     <Compile Include="Concrate\Lesson.cs" />

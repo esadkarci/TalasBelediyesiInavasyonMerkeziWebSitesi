@@ -1,0 +1,64 @@
+﻿body {
+    background-color: #f8f9fa;
+}
+
+.lesson-detail {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;  
+    margin: 50px;
+    padding: 20px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    align-items: center; 
+}
+
+    .lesson-detail img {
+        max-width: 40%;
+        height: auto;
+        margin-right: 20px;
+        flex-shrink: 0; 
+    }
+
+    .lesson-detail .text-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        max-width: 55%; 
+    }
+
+    .lesson-detail h2 {
+        color: var(--bs-primary);
+        overflow-wrap: break-word;
+        word-break: break-word;
+        line-height: 1.6;
+        margin: 0 0 10px 0;
+        text-align: center; 
+    }
+
+    .lesson-detail p {
+        overflow-wrap: break-word;
+        word-break: break-word;
+        margin: 0;
+        text-align: center; 
+    }
+
+
+@media screen and (max-width: 768px) {
+    .lesson-detail {
+        flex-direction: column; 
+        margin: 20px;
+        padding: 10px;
+    }
+
+        .lesson-detail img {
+            max-width: 80%;
+            margin-right: 0; 
+            margin-bottom: 20px; 
+        }
+
+        .lesson-detail .text-content {
+            text-align: center; 
+            max-width: 100%; 
+        }
+}

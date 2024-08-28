@@ -99,11 +99,10 @@
     <meta charset="utf-8" />
     <title>Announcement Swiper</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />-->
-    <!-- Link Swiper's CSS -->
-    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />-->
-
-    <!-- Scoped styles for the announcement area -->
-    <!--<style>
+<!-- Link Swiper's CSS -->
+<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />-->
+<!-- Scoped styles for the announcement area -->
+<!--<style>
         .announcement-swiper-container {
             position: relative;
             height: 100%;
@@ -132,26 +131,76 @@
     </style>
 </head>
 <body>-->
-    <!-- Announcement Swiper -->
-    <!--<div class="announcement-swiper-container">
-        <div class="swiper announcementSwiper">
+<!-- Announcement Swiper -->
+<!--<div class="announcement-swiper-container">
+    <div class="swiper announcementSwiper">
+        <div class="swiper-wrapper">
+            @foreach (var image in Model)
+            {
+                <div class="swiper-slide">
+                    <img src="@image.DuyurularImage" alt="Slide Image" />
+                </div>
+            }
+        </div>
+    </div>
+</div>-->
+<!-- Swiper JS -->
+<!--<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>-->
+<!-- Initialize Swiper -->
+<!--<script>
+        var announcementSwiper = new Swiper(".announcementSwiper", {});
+    </script>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Duyuru Custom Swiper Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Demo styles -->
+    <link rel="stylesheet" href="~/Css/Duyuru.css" />
+
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="duyuruCustom-wrapper">
+        <div class="swiper duyuruCustom-container">
             <div class="swiper-wrapper">
                 @foreach (var image in Model)
                 {
-                    <div class="swiper-slide">
+                    <div class="swiper-slide duyuruCustom-slide">
                         <img src="@image.DuyurularImage" alt="Slide Image" />
                     </div>
                 }
             </div>
         </div>
-    </div>-->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
 
     <!-- Swiper JS -->
-    <!--<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
-    <!--<script>
-        var announcementSwiper = new Swiper(".announcementSwiper", {});
+    <script>
+        var swiper = new Swiper(".duyuruCustom-container", {
+            pagination: {
+                el: ".swiper-pagination",
+                type: "progressbar",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
     </script>
 </body>
-</html>-->
+
+</html>

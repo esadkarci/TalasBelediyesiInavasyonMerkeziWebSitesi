@@ -14,7 +14,9 @@ namespace HizmetPortal.Controllers
         DuyurularManager dm = new DuyurularManager(new EfDuyurularDal());
         HizmetlerManager hm = new HizmetlerManager(new EfHizmetlerDal());
         LessonManager lm = new LessonManager(new EfLessonDal());
-        
+        GaleriManager gm = new GaleriManager(new EfGaleriDal());
+
+
         public ActionResult AnaSayfaIndex()
         {
             return View();
@@ -23,6 +25,11 @@ namespace HizmetPortal.Controllers
         {
             var duyurulars = dm.Getlist();
             return View(duyurulars);
+        }
+        public ActionResult HizmetIndex()
+        {
+            var hizmetlers = hm.HizmetlerGetAll();
+            return View(hizmetlers);
         }
         public ActionResult HizmetlerIndex()
         {
@@ -33,6 +40,11 @@ namespace HizmetPortal.Controllers
         {
             var lessons = lm.LessonGetAll();
             return View(lessons);
+        }
+        public ActionResult GaleriIndex()
+        {
+            var galeris = gm.Getlist();
+            return View(galeris);
         }
     }
 }

@@ -1,0 +1,46 @@
+﻿.lesson {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+}
+
+.lesson-div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+    .lesson-div img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .lesson-div p {
+        overflow-wrap: break-word;
+        word-break: break-word;
+        color: #ffffff;
+        background-color: var(--bs-primary);
+        padding: 10px;
+        margin: 0;
+    }
+
+
+@media (max-width: 768px) {
+    .lesson {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}
+
+@media (max-width: 480px) {
+    .lesson {
+        grid-template-columns: 1fr; 
+    }
+}

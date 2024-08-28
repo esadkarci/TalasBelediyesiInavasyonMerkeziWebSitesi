@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Gallery</title>
+    <link rel="stylesheet" href="~/Css/StyleSheet2.css">
+</head>
+<body>
+    <div class="gallery">
+        <h2><a href="@Url.Action("Index", "Galeri")">📷 Galeri</a></h2>
+        <div class="gallery-grid">
+            @{
+                int count = 0;
+            }
+            @foreach (var image in Model)
+            {
+                if (image.GaleriStatus && count < 5)
+                {
+                    <div class="gallery-item"><img src="@image.GaleriImage" alt="Gallery Image"></div>
+                    count++;
+                }
+            }
+        </div>
+        <center>
+            <div class="view-more">
+                <a href="@Url.Action("Index", "Galeri")">Devamını Gör</a>
+            </div>
+        </center>
+        
+
+
+        <div class="popup-image" style="display: none;">
+            <span>&times;</span>
+            <img src="" alt="Popup Image" />
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.gallery-grid img').forEach(image => {
+            image.onclick = () => {
+                const popup = document.querySelector('.popup-image');
+                popup.style.display = 'flex';
+                popup.querySelector('img').src = image.getAttribute('src');
+            }
+        });
+
+        document.querySelector('.popup-image span').onclick = () => {
+            document.querySelector('.popup-image').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

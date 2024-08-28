@@ -143,6 +143,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminDuyurularController.cs" />
+    <Compile Include="Controllers\AdminGaleriController.cs" />
     <Compile Include="Controllers\AdminHaberlerController.cs" />
     <Compile Include="Controllers\AdminHizmetlerController.cs" />
     <Compile Include="Controllers\AdminLessonController.cs" />
@@ -153,6 +154,7 @@
     <Compile Include="Controllers\AnaSayfaController.cs" />
     <Compile Include="Controllers\DersController.cs" />
     <Compile Include="Controllers\DuyuruController.cs" />
+    <Compile Include="Controllers\GaleriController.cs" />
     <Compile Include="Controllers\HaberlerController.cs" />
     <Compile Include="Controllers\HakkımızdaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -186,6 +188,13 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="Css\Duyuru.css" />
     <Content Include="Css\StyleSheet1.css" />
+    <Content Include="Css\StyleSheet2.css" />
+    <Content Include="Css\StyleSheet3.css" />
+    <Content Include="Css\StyleSheet4.css" />
+    <Content Include="Css\StyleSheet5.css" />
+    <Content Include="Css\StyleSheet6.css" />
+    <Content Include="Css\StyleSheet7.css" />
+    <Content Include="Css\StyleSheet8.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -2298,6 +2307,12 @@
     <Content Include="Views\Ders\Index.cshtml" />
     <Content Include="Views\Shared\AdminLayout2.cshtml" />
     <Content Include="Views\Deneme\Index.cshtml" />
+    <Content Include="Views\Galeri\Index.cshtml" />
+    <Content Include="Views\AdminGaleri\Index.cshtml" />
+    <Content Include="Views\AdminGaleri\Create.cshtml" />
+    <Content Include="Views\AdminGaleri\Edit.cshtml" />
+    <Content Include="Views\AnaSayfa\GaleriIndex.cshtml" />
+    <Content Include="Views\AnaSayfa\HizmetIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

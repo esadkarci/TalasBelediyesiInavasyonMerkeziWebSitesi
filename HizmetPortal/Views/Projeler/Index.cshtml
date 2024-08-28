@@ -8,78 +8,115 @@
 
 
 
-<br />
-<br />
-<br />
+@*<br />
+    <br />
+    <br />
 
-<div class="container">
-    <div>
-        <div class="row">
-            @foreach (var project in Model)
-            {
-                <div class="col-md-4">
-                    <div class="project-div">
-                        <img src="@project.ProjectImage" alt="Project Image">
-                        @if (project.StageId == 1)
-                        {
-                            <a href="/Projeler/YapılmasıPlananProjelerIndex" class="label label-success" style="background-color: red;">Hazırlık Aşaması</a>
-                        }
-                        else if (project.StageId == 2)
-                        {
-                            <a href="/Projeler/YapımıDevamEdenProjelerIndex" class="label label-success" style="background-color: orange;">Yapımı Devam Ediyor</a>
-                        }
-                        else if (project.StageId == 3)
-                        {
-                            <a href="/Projeler/YapımıTamamlananProjelerIndex" class="label label-success" style="background-color: green;">Yapımı Tamamlandı</a>
-                        }
-                        <center>
-                            <a href="/Projeler/ProjelerDetaylarIndex/@project.ProjectId" style="text-decoration: none;">
-                                <p>@project.ProjectTitle</p>
-                            </a>
-                        </center>
+    <div class="container">
+        <div>
+            <div class="row">
+                @foreach (var project in Model)
+                {
+                    <div class="col-md-4">
+                        <div class="project-div">
+                            <img src="@project.ProjectImage" alt="Project Image">
+                            @if (project.StageId == 1)
+                            {
+                                <a href="/Projeler/YapılmasıPlananProjelerIndex" class="label label-success" style="background-color: red;">Hazırlık Aşaması</a>
+                            }
+                            else if (project.StageId == 2)
+                            {
+                                <a href="/Projeler/YapımıDevamEdenProjelerIndex" class="label label-success" style="background-color: orange;">Yapımı Devam Ediyor</a>
+                            }
+                            else if (project.StageId == 3)
+                            {
+                                <a href="/Projeler/YapımıTamamlananProjelerIndex" class="label label-success" style="background-color: green;">Yapımı Tamamlandı</a>
+                            }
+                            <center>
+                                <a href="/Projeler/ProjelerDetaylarIndex/@project.ProjectId" style="text-decoration: none;">
+                                    <p>@project.ProjectTitle</p>
+                                </a>
+                            </center>
+                        </div>
                     </div>
-                </div>
-            }
+                }
+            </div>
         </div>
     </div>
-</div>
 
-<style>
+    <style>
 
 
-    .project-div {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        width: 100%;
-        border-radius: 15px;
-        overflow: hidden;
-    }
-
-        .project-div img {
+        .project-div {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
             width: 100%;
-            object-fit: cover;
+            border-radius: 15px;
+            overflow: hidden;
         }
 
-        .project-div .label {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: #ffffff;
-            padding: 5px 10px;
-            font-size: 12px;
-            border-radius: 3px;
-            z-index: 1;
-        }
+            .project-div img {
+                width: 100%;
+                object-fit: cover;
+            }
 
-        .project-div p {
-            overflow-wrap: break-word;
-            word-break: break-word;
-            color: #ffffff;
-            background-color: var(--bs-primary);
-            text-align: center;
-            padding: 10px;
-            margin: 0;
+            .project-div .label {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                color: #ffffff;
+                padding: 5px 10px;
+                font-size: 12px;
+                border-radius: 3px;
+                z-index: 1;
+            }
+
+            .project-div p {
+                overflow-wrap: break-word;
+                word-break: break-word;
+                color: #ffffff;
+                background-color: var(--bs-primary);
+                text-align: center;
+                padding: 10px;
+                margin: 0;
+            }
+    </style>*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/Css/StyleSheet7.css">
+
+</head>
+<body>
+    <div class="project">
+        @foreach (var project in Model)
+        {
+            <div class="project-div">
+                <img src="@project.ProjectImage" alt="project Image">
+                @if (project.StageId == 1)
+                {
+                    <a href="/Projeler/YapılmasıPlananProjelerIndex" class="label label-success" style="background-color: red;">Hazırlık Aşaması</a>
+                }
+                else if (project.StageId == 2)
+                {
+                    <a href="/Projeler/YapımıDevamEdenProjelerIndex" class="label label-success" style="background-color: orange;">Yapımı Devam Ediyor</a>
+                }
+                else if (project.StageId == 3)
+                {
+                    <a href="/Projeler/YapımıTamamlananProjelerIndex" class="label label-success" style="background-color: green;">Yapımı Tamamlandı</a>
+                }
+                <center>
+                    <a href="/Projeler/ProjelerDetaylarIndex/@project.ProjectId" style="text-decoration: none;">
+                        <p>@project.ProjectTitle</p>
+                    </a>
+                </center>
+            </div>
         }
-</style>
+    </div>
+</body>
+</html>

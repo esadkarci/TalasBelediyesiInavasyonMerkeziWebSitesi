@@ -1,0 +1,17 @@
+﻿@model EntityLayer_HizmetPortal.Concrate.Galeri
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Yeni Resim Ekleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("Create", "AdminGaleri", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.Label("Galeri Image")
+        <input type="file" name="GaleriImage" />
+        <button type="submit" class="btn btn-primary">Ekle</button>
+    </div>
+}

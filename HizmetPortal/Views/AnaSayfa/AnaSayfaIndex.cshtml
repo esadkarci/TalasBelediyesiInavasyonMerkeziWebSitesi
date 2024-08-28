@@ -7,25 +7,31 @@
 <br />
 <br />
 <br />
-<div class="duyurular-section">
-    @Html.Action("Index", "Duyuru")
-</div>
-
 @*<div class="duyurular-section">
-    @Html.Action("DuyurlarIndex", "AnaSayfa")
+    @Html.Action("Index", "Duyuru")
 </div>*@
 
+<div class="duyurular-section">
+    @Html.Action("DuyurlarIndex", "AnaSayfa")
+</div>
+
+<div class="hizmetler-section">
+    @Html.Action("HizmetIndex", "AnaSayfa")
+</div>
 <div class="hizmetler-section">
     @Html.Action("HizmetlerIndex", "AnaSayfa")
 </div>
+@*<div class="hizmetler-section">
+    @Html.Action("Index", "Ders")
+</div>*@
 
 <div class="hizmetler-section">
-    @Html.Action("Index", "Ders")
+    @Html.Action("DersIndex", "AnaSayfa")
 </div>
 
-@*<div class="hizmetler-section">
-    @Html.Action("DersIndex", "AnaSayfa")
-</div>*@
+<div class="hizmetler-section">
+    @Html.Action("GaleriIndex", "AnaSayfa")
+</div>
 
 <br />
 <br />

@@ -4,67 +4,21 @@
     Layout = "~/Views/Shared/UygulamaLayout.cshtml";
 }
 
-<div class="container-fluid lesson-detail">
-    <div class="row h-100 justify-content-center align-items-center">
-        <div class="col-md-10">
-            <div class="detail-card">
-                <div class="row">
-                    <div class="col-md-4 d-flex align-items-center justify-content-center">
-                        <img src="@Model.LessonImage" class="img-fluid rounded" alt="@Model.LessonTitle">
-                    </div>
-                    <div class="col-md-8 d-flex align-items-center">
-                        <div class="text-content">
-                            <center><h2>@Model.LessonTitle</h2></center>
-                            <p>@Model.LessonDescription</p> 
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/Css/StyleSheet3.css">
+</head>
+<body>
+    <div class="lesson-detail">
+        <img src="@Model.LessonImage" alt="Lesson Image">
+        <div class="text-content">
+           <center><h2>@Model.LessonTitle</h2></center> 
+           <p>@Model.LessonDescription</p>
         </div>
     </div>
-</div>
-
-<style>
-    .lesson-detail {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #f8f9fa;
-    }
-
-        .lesson-detail .detail-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            height: auto;
-            padding: 20px;
-        }
-
-            .lesson-detail .detail-card img {
-                max-height: 100%;
-                width: auto;
-                object-fit: cover;
-                border-radius: 10px;
-            }
-
-            .lesson-detail .detail-card .text-content {
-                padding: 20px;
-            }
-
-        .lesson-detail p {
-            overflow-wrap: break-word;
-            word-break: break-word;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .lesson-detail h2 {
-            color: var(--bs-primary);
-            overflow-wrap: break-word;
-            word-break: break-word;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-</style>
+</body>
+</html>

@@ -18,5 +18,7 @@ namespace DataAcessLayer_HizmetPortal.Concrate
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Duyurular> Duyurulars { get; set; }
         public DbSet<Haberler> Haberlers { get; set; }
+        public DbSet<Galeri> Galeris { get; set; }
+
     }
 }

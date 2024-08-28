@@ -17,8 +17,6 @@ namespace EntityLayer_HizmetPortal.Concrate
         public string HizmetDescription { get; set; }
         [StringLength(200)]
         public string HizmetImage { get; set; }
-        [StringLength(200)]
-        public string HizmetIcon { get; set; }
         public bool HizmetStatus { get; set; }
     }
 }

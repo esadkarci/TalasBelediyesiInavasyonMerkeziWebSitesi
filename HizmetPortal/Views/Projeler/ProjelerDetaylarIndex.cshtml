@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/UygulamaLayout.cshtml";
 }
 
-<div class="container-fluid project-detail">
+<!--<div class="container-fluid project-detail">
     <div class="row h-100 justify-content-center align-items-center">
         <div class="col-md-10">
             <div class="detail-card">
@@ -30,8 +30,9 @@
                                 // Label color yellow
                                 <span class="label" style="background-color: green;">Tamamlandı</span>
                             }
-                            <p>@Model.ProjectDescription</p> <!-- Display the project's description -->
-                        </div>
+                            <p>@Model.ProjectDescription</p>-->
+ <!-- Display the project's description -->
+<!--</div>
                     </div>
                 </div>
             </div>
@@ -93,4 +94,33 @@
         line-height: 1.6;
         margin-bottom: 20px;
     }
-</style>
+</style>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/Css/StyleSheet8.css">
+</head>
+<body>
+    <div class="project-detail">
+        <img src="@Model.ProjectImage" alt="project Image">
+        <div class="text-content">
+            @if (Model.StageId == 1)
+            {
+                <span class="label" style="background-color: red;">Hazırlık Aşaması</span>
+            }
+            else if (Model.StageId == 2)
+            {
+                <span class="label" style="background-color: orange;">Devam Ediyor</span>
+            }
+            else if (Model.StageId == 3)
+            {
+                <span class="label" style="background-color: green;">Tamamlandı</span>
+            }
+            <center><h2>@Model.ProjectTitle</h2></center>
+            <p>@Model.ProjectDescription</p>
+        </div>
+    </div>
+</body>
+</html>

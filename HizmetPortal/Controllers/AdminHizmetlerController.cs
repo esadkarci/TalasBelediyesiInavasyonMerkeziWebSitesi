@@ -17,7 +17,7 @@ namespace HizmetPortal.Controllers
     public class AdminHizmetlerController : Controller
     {
         HizmetlerManager hm = new HizmetlerManager(new EfHizmetlerDal());
-        Context context =new Context();
+        Context context = new Context();
         [Authorize]
         public ActionResult Index()
         {
@@ -33,40 +33,17 @@ namespace HizmetPortal.Controllers
         [HttpPost]
         public ActionResult Create(Hizmetler hizmetler)
         {
-            HizmetlerValidator hizmetlerValidator = new HizmetlerValidator();
-            ValidationResult results = hizmetlerValidator.Validate(hizmetler);
-
-            if (results.IsValid)
+            if (Request.Files.Count > 0 && Request.Files[0] != null)
             {
-                if (Request.Files.Count > 0 && Request.Files[0] != null)
-                {
-                    string dosyaAdi = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
-                    string uzanti = Path.GetExtension(Request.Files[0].FileName);
-                    string yol = "~/Image/" + dosyaAdi + uzanti;
-                    Request.Files[0].SaveAs(Server.MapPath(yol));
-                    hizmetler.HizmetImage = "/Image/" + dosyaAdi + uzanti;
-                }
-
-                if (Request.Files.Count > 1 && Request.Files["HizmetIconFile"] != null)
-                {
-                    string iconFileName = Path.GetFileNameWithoutExtension(Request.Files["HizmetIconFile"].FileName);
-                    string iconExtension = Path.GetExtension(Request.Files["HizmetIconFile"].FileName);
-                    string iconPath = "~/Icon/" + iconFileName + iconExtension;
-                    Request.Files["HizmetIconFile"].SaveAs(Server.MapPath(iconPath));
-                    hizmetler.HizmetIcon = "/Icon/" + iconFileName + iconExtension;
-                }
-
-                hm.HizmetlerAdd(hizmetler);
-                return RedirectToAction("Index");
+                string dosyaAdi = Path.GetFileNameWithoutExtension(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaAdi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                hizmetler.HizmetImage = "/Image/" + dosyaAdi + uzanti;
             }
-            else
-            {
-                foreach (var failure in results.Errors)
-                {
-                    ModelState.AddModelError(failure.PropertyName, failure.ErrorMessage);
-                }
-                return View(hizmetler);
-            }
+
+            hm.HizmetlerAdd(hizmetler);
+            return RedirectToAction("Index");
         }
 
 
@@ -80,22 +57,13 @@ namespace HizmetPortal.Controllers
         [HttpPost]
         public ActionResult Edit(Hizmetler hizmetler)
         {
-            if (Request.Files.Count > 0 && Request.Files["HizmetlerImage"] != null)
+            if (Request.Files.Count > 0 && Request.Files["HizmetImage"] != null)
             {
-                string dosyaAdi = Path.GetFileNameWithoutExtension(Request.Files["HizmetlerImage"].FileName);
-                string uzanti = Path.GetExtension(Request.Files["HizmetlerImage"].FileName);
+                string dosyaAdi = Path.GetFileNameWithoutExtension(Request.Files["HizmetImage"].FileName);
+                string uzanti = Path.GetExtension(Request.Files["HizmetImage"].FileName);
                 string yol = "~/Image/" + dosyaAdi + uzanti;
-                Request.Files["HizmetlerImage"].SaveAs(Server.MapPath(yol));
+                Request.Files["HizmetImage"].SaveAs(Server.MapPath(yol));
                 hizmetler.HizmetImage = "/Image/" + dosyaAdi + uzanti;
-            }
-
-            if (Request.Files.Count > 0 && Request.Files["HizmetIconFile"] != null)
-            {
-                string iconFileName = Path.GetFileNameWithoutExtension(Request.Files["HizmetIconFile"].FileName);
-                string iconExtension = Path.GetExtension(Request.Files["HizmetIconFile"].FileName);
-                string iconPath = "~/Icon/" + iconFileName + iconExtension;
-                Request.Files["HizmetIconFile"].SaveAs(Server.MapPath(iconPath));
-                hizmetler.HizmetIcon = "/Icon/" + iconFileName + iconExtension;
             }
             hm.HizmetlerUpdate(hizmetler);
             return RedirectToAction("Index");

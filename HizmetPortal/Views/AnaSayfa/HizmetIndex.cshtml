@@ -1,0 +1,46 @@
+﻿﻿@using EntityLayer_HizmetPortal.Concrate
+@model List<Hizmetler>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/Css/StyleSheet6.css">
+</head>
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+        <h4 class="text-primary">Hizmetlerimiz</h4>
+        <h1 class="display-4 mb-4">Daha İyi Bir Gelecek İçin Çalışıyoruz</h1>
+        <p class="mb-0">
+            Belediyemizin inovasyon merkezinde gençlerimiz için geleceğe yönelik çalışma için projeler yapmaktayız.
+        </p>
+    </div>
+    <div class="hizmetler">
+        @foreach (var hizmet in Model)
+        {
+            <div class="hizmetler-item">
+                <div class="hizmetler-icon-div">
+                    <img src="@hizmet.HizmetImage" />
+                </div>
+                <div class="hizmetler-detail-div">
+                    <h4>@hizmet.HizmetName</h4>
+                    <p>@hizmet.HizmetDescription</p>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -14,7 +14,6 @@
             <th>HizmetName</th>
             <th>HizmetDescription</th>
             <th>HizmetImage</th>
-            <th>HizmetIcon</th>
             <th>HizmetStatus</th>
             <th>HizmetStatusButton</th>
             <th>Güncelle</th>
@@ -31,7 +30,6 @@
                     @(item.HizmetDescription != null ? (item.HizmetDescription.Length > 20 ? item.HizmetDescription.Substring(0, 20) + "..." : item.HizmetDescription) : "Bilgi yok")
                 </td>
                 <td>@item.HizmetImage</td>
-                <td>@item.HizmetIcon</td>
                 <td>@item.HizmetStatus</td>
                 <td>
                     @if (item.HizmetStatus)

@@ -1,0 +1,102 @@
+﻿/* Importing Google Fonts */
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');*/
+
+body {
+    background-color: var(--bs-light);
+    /*font-family: 'Roboto', sans-serif;*/ /* Updated font */
+}
+
+.hizmetler {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4-column grid */
+    gap: 10px;
+    background-color: var(--bs-light);
+    margin-left: 275px;
+    margin-right: 275px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+    .hizmetler .hizmetler-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--bs-white);
+        padding: 10px;
+        border-radius: 10px;
+        transition: background-color 0.5s ease, color 0.5s ease; /* Transition for background and text color */
+    }
+
+        .hizmetler .hizmetler-item:hover {
+            background-color: var(--bs-primary); /* Background color on hover */
+            color: var(--bs-white); /* Text color on hover */
+        }
+
+            .hizmetler .hizmetler-item:hover h4,
+            .hizmetler .hizmetler-item:hover p {
+                color: var(--bs-white); /* Heading and paragraph text color on hover */
+            }
+
+    .hizmetler .hizmetler-icon-div {
+        background-color: var(--bs-white); /* Keep the background of the icon container white */
+        border-radius:10px;
+    }
+
+        .hizmetler .hizmetler-icon-div img {
+            width: 150px;
+            border-radius: 10px;
+            background: var(--bs-light);
+           
+            transition: filter 0.5s ease; /* Transition for image filter */
+        }
+
+    .hizmetler .hizmetler-item:hover .hizmetler-icon-div img {
+        background-color:var(--bs-white);
+        filter: none; /* Ensure no filter is applied on hover to keep the icon color unchanged */
+    }
+
+    .hizmetler .hizmetler-detail-div {
+        text-align: center;
+    }
+
+        .hizmetler .hizmetler-detail-div h4,
+        .hizmetler .hizmetler-detail-div p {
+            margin: 0;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+
+        .hizmetler .hizmetler-detail-div h4 {
+            margin-bottom: 5px;
+            font-weight: 700; /* Bold for headings */            
+        }
+
+        .hizmetler .hizmetler-detail-div p {
+            font-weight: 400; /* Regular for paragraphs */          
+        }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hizmetler {
+        grid-template-columns: repeat(2, 1fr); /* 2-column grid on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .hizmetler {
+        grid-template-columns: 1fr; /* Single column on small screens */
+        margin: 20px; /* Reduce margins */
+        padding: 10px; /* Reduce padding */
+    }
+
+        .hizmetler .hizmetler-item {
+            padding: 5px; /* Reduce padding in items */
+        }
+
+        .hizmetler .hizmetler-icon-div img {
+            width: 100px; /* Reduce icon size */
+        }
+}

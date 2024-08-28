@@ -2,69 +2,67 @@
 @model List<Hizmetler>
 
 @{
-    Layout = null;
+        Layout = null;
 }
 
-
-
 <div class="container-fluid feature bg-light py-5 hizmetleranasayfa">
-    <div class="container py-5">
-        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-            <h4 class="text-primary">Hizmetlerimiz</h4>
-            <h1 class="display-4 mb-4">Daha İyi Bir Gelecek İçin Çalışıyoruz</h1>
-            <p class="mb-0">
-                Belediyemizin inovasyon merkezinde gençlerimiz için geleceğe yönelik çalışma için projeler yapmaktayız.
-            </p>
-        </div>
-        <div class="row g-4">
-            @foreach (var hizmet in Model)
-            {
-                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="feature-item p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4 custom-icon">
-                            <img src="@hizmet.HizmetIcon" alt="Ikon" class="custom-icon-image">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">Hizmetlerimiz</h4>
+                <h1 class="display-4 mb-4">Daha İyi Bir Gelecek İçin Çalışıyoruz</h1>
+                <p class="mb-0">
+                    Belediyemizin inovasyon merkezinde gençlerimiz için geleceğe yönelik çalışma için projeler yapmaktayız.
+                </p>
+            </div>
+            <div class="row g-4">
+                @foreach (var hizmet in Model)
+                {
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="feature-item p-4 pt-0">
+                            <div class="feature-icon p-4 mb-4 custom-icon">
+                                <img src="@hizmet.HizmetImage" alt="Ikon" class="custom-icon-image">
+                            </div>
+                            <h4 class="mb-4">@hizmet.HizmetName</h4>
+                            <p class="mb-4">
+                                @if (hizmet.HizmetDescription.Length > 100)
+                                {
+                                    <text>@(hizmet.HizmetDescription.Substring(0, 100) + "...")</text>
+                                }
+                                else
+                                {
+                                    <text>@hizmet.HizmetDescription</text>
+                                }
+                            </p>
                         </div>
-                        <h4 class="mb-4">@hizmet.HizmetName</h4>
-                        <p class="mb-4">
-                            @if (hizmet.HizmetDescription.Length > 100)
-                            {
-                                <text>@(hizmet.HizmetDescription.Substring(0, 100) + "...")</text>
-                            }
-                            else
-                            {
-                                <text>@hizmet.HizmetDescription</text>
-                            }
-                        </p>
                     </div>
-                </div>
-            }
+                }
+            </div>
         </div>
     </div>
-</div>
 
-<style>
-    .hizmetleranasayfa p {
-        overflow-wrap: break-word;
-        word-break: break-word;
-    }
-    .hizmetleranasayfa h4 {
-        overflow-wrap: break-word;
-        word-break: break-word;
-    }
-
-    .hizmetleranasayfa .custom-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        border-radius: 4px;
-        background-color: transparent;
-    }
-
-        .hizmetleranasayfa .custom-icon img.custom-icon-image {
-            max-width: 100%;
-            height: auto;
-            display: block;
+    <style>
+        .hizmetleranasayfa p {
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+        .hizmetleranasayfa h4 {
+            overflow-wrap: break-word;
+            word-break: break-word;
         }
 
-</style>
+        .hizmetleranasayfa .custom-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: transparent;
+        }
+
+            .hizmetleranasayfa .custom-icon img.custom-icon-image {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+
+    </style>

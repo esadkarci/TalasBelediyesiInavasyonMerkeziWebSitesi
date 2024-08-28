@@ -1,0 +1,21 @@
+﻿@model EntityLayer_HizmetPortal.Concrate.Galeri
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Duyurlar Güncelleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("Edit", "AdminGaleri", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.Label("Galeri Id")
+        @Html.TextBoxFor(x => x.GaleriId, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Galeri Image")
+        <input type="file" name="GaleriImage" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Güncelle</button>
+}
